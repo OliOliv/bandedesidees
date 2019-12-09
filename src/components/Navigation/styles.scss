@@ -1,0 +1,160 @@
+
+.logo {
+  width: 30vw;
+  margin: 4vh auto 0;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 41px;
+}
+
+.navigation {
+  background-color: $colorBlack;
+}
+figure {
+  margin: auto;
+}
+.center {
+  justify-content: center;
+}
+
+.spaceli {
+  margin: 0 2vw 0 2vw;
+}
+
+nav a {
+  font-family: roboto;
+  display: inline-block;
+  text-decoration: none;
+  color: #3f1c4d;
+  list-style-type: none;
+  font-size: 2vh;
+  font-family: roboto;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-text-decoration-skip: objects;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #36cdc0;
+  -webkit-text-decoration-skip: objects;
+}
+nav li {
+  list-style: none;
+}
+.square {
+  padding: 1vh;
+  background-color: #36cdc0;
+}
+
+.square a {
+  color: white;
+}
+
+.square a:hover {
+  color: #3f1c4d;
+}
+.normal a {
+  color: #3f1c4d;
+}
+.submenu {
+  line-height: 3vh;
+}
+link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $blue;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #3f1c4d;
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+    display: none;
+  }
+
+  nav {
+    margin-top: 7vh;
+  }
+}
+
+.logo {
+  width: 30vw;
+  margin: 4vh auto 0;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 41px;
+}
+
+
+figure {
+  margin: auto;
+}
+.center {
+  justify-content: center;
+}
+
+.spaceli {
+  margin: 0 2vw 0 2vw;
+}
+
+nav a {
+  font-family: roboto;
+  display: inline-block;
+  text-decoration: none;
+  color: #3f1c4d;
+  list-style-type: none;
+  font-size: 2vh;
+  font-family: roboto;
+  letter-spacing: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-text-decoration-skip: objects;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: #36cdc0;
+  -webkit-text-decoration-skip: objects;
+}
+nav li {
+  list-style: none;
+}
+.square {
+  padding: 1vh;
+  background-color: #36cdc0;
+}
+
+.square a {
+  color: white;
+}
+
+.square a:hover {
+  color: #3f1c4d;
+}
+.normal a {
+  color: #3f1c4d;
+}
+.submenu {
+  line-height: 3vh;
+}
+link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $blue;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #3f1c4d;
+}
+
+@media screen and (max-width: 992px) {
+  .logo {
+    display: none;
+  }
+
+  nav {
+    margin-top: 7vh;
+  }
+}
