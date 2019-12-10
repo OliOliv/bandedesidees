@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to la bande des idees 🗨️🦸🏽🦸🏼💬🦸🦸🏿‍♂️💭</h1>
+<h1 align="center">Welcome to la bande des idees 🦸🏽🦸🏼🦸🏿‍♂️</h1>
 <p>
  
   <img src="https://img.shields.io/badge/npm-%3E%3D6.9.0-blue.svg" />
