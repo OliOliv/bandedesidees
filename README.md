@@ -19,7 +19,7 @@
 
 - npm >=6.9.0
 
-## Quick start
+## Quick start - how to build
 1. Clone the repository on a terminal :
 ```sh
 git clone git@github.com:OliOliv/bandedesidees.git  
@@ -31,7 +31,6 @@ git clone git@github.com:OliOliv/bandedesidees.git
 npm i  
 ```
 4. And let's go !
-
 ```sh
 npm run start
 ```
@@ -48,8 +47,9 @@ A quick look at the top-level files and directories you'll see
 6.  **`/src`**: Contains all the code related to the front part
 7.  **`next.config.js`**: Configuration and preferences on next.js (sass utilisation for exemple)
 8.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-9.  **`README`**: Documentation to configure and start the project
-10.  **`server.js`**: The server of the app
+9.  **`project_bdi.sql.gz`**: Sql file of database architecture and content
+10. **`README`**: Documentation to configure and start the project
+11. **`server.js`**: The server of the app
 
 ## Author
 
