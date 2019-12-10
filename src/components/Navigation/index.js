@@ -23,7 +23,7 @@ const Navigation = props => {
     <Fragment>
       <Navbar className="navigation" light expand="md">
         <div className="navWrapper">
-          <figure href="/">
+          <figure className="logoContainer" href="/">
             <img className="logo" src="/logo.jpg"></img>
           </figure>
           <NavbarToggler onClick={toggle} />
@@ -34,18 +34,25 @@ const Navigation = props => {
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
+                  Les BDI
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">
+                  Qui sommmes-nous
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Archives
                 </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
+                <DropdownMenu className="navContent" right>
+                  <DropdownItem>intervenant.e.s</DropdownItem>
+                  <DropdownItem>livres</DropdownItem>
+                  <DropdownItem>
+                    auteurs.rices et dessinateurs.rices
+                  </DropdownItem>
+                  <DropdownItem>editions</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
@@ -53,90 +60,6 @@ const Navigation = props => {
         </div>
       </Navbar>
     </Fragment>
-    //       <Fragment>
-    //         <figure>
-    // /            {/* <img
-    //               className="logo"
-    //               src={require("./img/logobdi.jpg")}
-    //               alt="Logo de la bande des idées"
-    //             /> */}
-    //           {/* </Link> */}
-    //         </figure>
-    //         <nav className="navbar navbar-expand-lg navbar-light">
-    //           <button
-    //             className="navbar-toggler"
-    //             type="button"
-    //             data-toggle="collapse"
-    //             data-target="#navbarNavDropdown"
-    //             aria-controls="navbarNavDropdown"
-    //             aria-expanded="false"
-    //             aria-label="Toggle navigation"
-    //           >
-    //             <span className="navbar-toggler-icon" />
-    //           </button>
-    //           <div className="collapse navbar-collapse center" id="navbarNavDropdown">
-    //             <ul className="navbar-nav">
-    //               <li className="nav-item active spaceli">
-    //                 <a className="nav-link" href="#">
-    //                 <Link href='/about'>                    Accueil
-    //                     </Link>
-    //                 </a>
-    //               </li>
-    //               <li className="nav-item spaceli">
-    //                 <a className="nav-link" href="#">
-    //                 <Link href='/about'>
-    //                     les bdi
-    //                     </Link>
-    //                 </a>
-    //               </li>
-    //               <li className="nav-item spaceli">
-    //                 <a className="nav-link" href="#">
-    //                   <Link to={{ pathname: `/presentation` }}>
-    //                     qui sommes nous
-    //                   </Link>
-    //                 </a>
-    //               </li>
-    //               <li className="nav-item dropdown spaceli">
-    //                 <a
-    //                   className="nav-link dropdown-toggle "
-    //                   href="#"
-    //                   id="navbarDropdownMenuLink"
-    //                   data-toggle="dropdown"
-    //                   aria-haspopup="true"
-    //                   aria-expanded="false"
-    //                 >
-    //                   Archives
-    //                 </a>
-    //                 <div
-    //                   className="dropdown-menu square"
-    //                   aria-labelledby="navbarDropdownMenuLink"
-    //                 >
-    //                   <ul className="subMenu">
-    //                     <li>
-    //                     <Link href='/about'>
-    //                         Intervenant.e.s
-    //                       </Link>
-    //                     </li>
-    //                     <li>
-    //                     <Link href='/about'>
-    //                         livres
-    //                          </Link>
-    //                     </li>
-    //                     <li>
-    //                     <Link href='/about'>                        auteurs & dessinateurs
-    //                       </Link>
-    //                     </li>
-    //                     <li>
-    //                     <Link href='/about'>                        editeurs
-    //                         </Link>
-    //                     </li>
-    //                   </ul>
-    //                 </div>
-    //               </li>
-    //             </ul>
-    //           </div>
-    //         </nav>
-    //       </Fragment>
   );
 };
 

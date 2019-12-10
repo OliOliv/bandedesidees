@@ -4,171 +4,44 @@
   margin-top: 4rem;
   display: flex;
   justify-content: center;
-
-  .logo {
-    width: 15rem;
-    padding: 0;
-    margin: 0;
+  text-transform: uppercase;
+  .logoContainer {
+    margin-right: $small;
+    .logo {
+      width: 25rem;
+      padding: 0;
+      margin: 0;
+    }
   }
 
   .navWrapper {
     justify-content: center;
     display: flex;
   }
+
+  .navContent {
+    background-color: $colorBlue;
+    button {
+      font-family: $basic;
+
+      text-transform: uppercase;
+      color: $colorWhite;
+    }
+  }
+
+  .navContent :hover {
+    background-color: transparent;
+    color: $colorBlack;
+  }
+}
+.navbar-light .navbar-nav .nav-link {
+  color: $colorBlack;
+  font-size: 1.1rem;
+  padding-right: $small;
+  font-family: roboto;
+  letter-spacing: 0.2rem;
 }
 
-// .logo {
-//   width: 30vw;
-//   margin: 4vh auto 0;
-//   display: -ms-flexbox;
-//   display: flex;
-//   padding-top: 41px;
-// }
-
-// figure {
-//   margin: auto;
-// }
-// .center {
-//   justify-content: center;
-// }
-
-// .spaceli {
-//   margin: 0 2vw 0 2vw;
-// }
-
-nav a {
-  font-family: roboto;
-  display: inline-block;
-  text-decoration: none;
-  color: $colorPurple;
-  list-style-type: none;
-  font-size: 2vh;
-  font-family: roboto;
-  letter-spacing: 3px;
-  cursor: pointer;
-  text-transform: uppercase;
-  -webkit-text-decoration-skip: objects;
+.navbar-light .navbar-nav .nav-link:hover {
+  color: $colorBlue;
 }
-
-// nav a:hover {
-//   text-decoration: none;
-//   color: $colorBlue;
-//   -webkit-text-decoration-skip: objects;
-// }
-// nav li {
-//   list-style: none;
-// }
-// .square {
-//   padding: 1vh;
-//   background-color: $colorBlue;
-// }
-
-// .square a {
-//   color: white;
-// }
-
-// .square a:hover {
-//   color: $colorPurple;
-// }
-// .normal a {
-//   color: $colorPurple;
-// }
-// .submenu {
-//   line-height: 3vh;
-// }
-// link:focus,
-// .navbar-light .navbar-nav .nav-link:hover {
-//   color: $colorBlue;
-// }
-
-// .navbar-light .navbar-nav .nav-link {
-//   color: $colorPurple;
-// }
-
-// @media screen and (max-width: 992px) {
-//   .logo {
-//     display: none;
-//   }
-
-//   nav {
-//     margin-top: 7vh;
-//   }
-// }
-
-// .logo {
-//   width: 30vw;
-//   margin: 4vh auto 0;
-//   display: -ms-flexbox;
-//   display: flex;
-//   padding-top: 41px;
-// }
-
-// figure {
-//   margin: auto;
-// }
-// .center {
-//   justify-content: center;
-// }
-
-// .spaceli {
-//   margin: 0 2vw 0 2vw;
-// }
-
-// nav a {
-//   font-family: roboto;
-//   display: inline-block;
-//   text-decoration: none;
-//   color: $colorPurple;
-//   list-style-type: none;
-//   font-size: 2vh;
-//   font-family: roboto;
-//   letter-spacing: 3px;
-//   cursor: pointer;
-//   text-transform: uppercase;
-//   -webkit-text-decoration-skip: objects;
-// }
-
-// nav a:hover {
-//   text-decoration: none;
-//   color: $colorBlue;
-//   -webkit-text-decoration-skip: objects;
-// }
-// nav li {
-//   list-style: none;
-// }
-// .square {
-//   padding: 1vh;
-//   background-color: $colorBlue;
-// }
-
-// .square a {
-//   color: white;
-// }
-
-// .square a:hover {
-//   color: $colorPurple;
-// }
-// .normal a {
-//   color: $colorPurple;
-// }
-// .submenu {
-//   line-height: 3vh;
-// }
-// link:focus,
-// .navbar-light .navbar-nav .nav-link:hover {
-//   color: $colorBlue;
-// }
-
-// .navbar-light .navbar-nav .nav-link {
-//   color: $colorPurple;
-// }
-
-// @media screen and (max-width: 992px) {
-//   .logo {
-//     display: none;
-//   }
-
-//   nav {
-//     margin-top: 7vh;
-//   }
-// }
