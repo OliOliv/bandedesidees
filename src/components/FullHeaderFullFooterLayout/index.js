@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Navigation from "../Navigation";
 import PropTypes from "prop-types";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 class FullHeaderFullFooterLayout extends React.Component {
   static propTypes = {
@@ -13,6 +14,7 @@ class FullHeaderFullFooterLayout extends React.Component {
         <Header></Header>
         <Navigation></Navigation>
         {this.props.children}
+        <Footer></Footer>
       </Fragment>
     );
   }

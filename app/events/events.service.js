@@ -11,8 +11,8 @@ module.exports = {
 function getLastEvent(callback) {
         // Attempt to save the user
         db.getLastEvent(function (res) {
-               
             return callback({ success: true, message: 'Successfully get las event.', events: res });
+            
         }, function (err) {
             return callback({ success: false, message: 'No last event.' });
         });

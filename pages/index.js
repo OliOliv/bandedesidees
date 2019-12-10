@@ -1,18 +1,18 @@
 import React, { Component, Fragment } from "react";
-import Home from "./Home";
 import "bootstrap/dist/css/bootstrap.min.css";
+import HomePage from "src/pages/HomePage/index.js"
 
-import FullHeaderFullFooterLayout from "../src/components/FullHeaderFullFooterLayout";
-class HomePage extends Component {
+import FullHeaderFullFooterLayout from "src/components/FullHeaderFullFooterLayout";
+class Home extends Component {
   render() {
     return (
       <Fragment>
         <FullHeaderFullFooterLayout>
-          <Home {...this.props} />
+          <HomePage/>
         </FullHeaderFullFooterLayout>
       </Fragment>
     );
   }
 }
 
-export default HomePage;
+export default Home;

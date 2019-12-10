@@ -1,15 +1,14 @@
 import React, { Component, Fragment } from "react";
-import FullHeaderFullFooterLayout from "../../src/components/FullHeaderFullFooterLayout"
+import FullHeaderFullFooterLayout from "src/components/FullHeaderFullFooterLayout";
+import AboutPage from "src/pages/AboutPage/index.js"
+
 class About extends Component {
   render() {
     return (
-      <Fragment>
-        <Fragment>
           <FullHeaderFullFooterLayout>
-            <p>About page</p>
+            <AboutPage></AboutPage>
           </FullHeaderFullFooterLayout>
-        </Fragment>
-      </Fragment>
+       
     );
   }
 }

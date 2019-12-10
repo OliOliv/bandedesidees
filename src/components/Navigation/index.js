@@ -13,6 +13,7 @@ import {
   DropdownItem
 } from "reactstrap";
 import "./styles.scss";
+import Link from 'next/link'
 
 const Navigation = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +24,11 @@ const Navigation = props => {
     <Fragment>
       <Navbar className="navigation" light expand="md">
         <div className="navWrapper">
-          <figure className="logoContainer" href="/">
-            <img className="logo" src="/logo.jpg"></img>
-          </figure>
+          <Link  href="/">
+            <figure className="logoContainer">
+            <img className="logo" src="/logo.jpg" ></img>
+            </figure>
+          </Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
@@ -33,7 +36,7 @@ const Navigation = props => {
                 <NavLink href="/components/">Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
+                <NavLink href="/">
                   Les BDI
                 </NavLink>
               </NavItem>

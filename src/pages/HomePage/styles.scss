@@ -1,0 +1,28 @@
+@import "src/components/variables.scss";
+
+.homepageButton {
+    display: -ms-flexbox;
+    display: flex;
+    background: transparent;
+    -ms-flex-pack: center;
+    width: auto;
+    padding: 15px;
+    border: solid 2px $colorBlack;
+    margin: $medium auto 0 auto;
+    font-family: roboto;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $colorBlack;
+    text-align: center;
+    letter-spacing: $xsmall;
+    border-radius: $bradius;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px 0 #dcdcdc;
+  }
+  
+  .homepageButton:hover {
+    color: $colorWhite;
+    border: solid 2px $colorBlack;
+    background-color: $colorBlack;
+    transition: 0.3s;
+  }

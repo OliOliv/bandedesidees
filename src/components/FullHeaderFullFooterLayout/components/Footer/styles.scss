@@ -1,0 +1,11 @@
+@import "src/components/variables.scss";
+
+.footer {
+    align-items: center;
+    height: 6vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background-color: $colorPurple;
+  }
