@@ -17,11 +17,18 @@
 
 ## Prerequisites
 
-- npm >=5.5.0
-- node >=9.3.
+- npm >=6.9.0
 
-## Install
+## Quick start
+1. Clone the repository
+On a terminal :
+```sh
+git clone git@github.com:OliOliv/bandedesidees.git  
+```
+2. Import the project_bdi.sql.gz file on the mysql administration of your choice (phpMyAdmin here) and configure config\main.js with your own logins
 
+3. Install all dependencies
+On the root :
 ```sh
 npm i  
 ```
@@ -31,6 +38,21 @@ npm i
 ```sh
 npm run start
 ```
+
+## What's inside
+
+A quick look at the top-level files and directories you'll see
+
+1.  **`/app`**: Contains all the backend logic (routes, sql request and configuration)
+2.  **`/config`**: Contains sql administration configuration
+3.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+4.  **`/pages`**: Next.js dynamic routes
+5.  **`/public`**: Contains assets
+6.  **`/src`**: Contains all the code related to the front part
+7.  **`next.config.js`**: Configuration and préférences on next.js (sass utilisation for exemple)
+8.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+9.  **`README`**: Documentation to configure and start the project
+10.  **`server.js`**: The server of the app
 
 ## Author
 
