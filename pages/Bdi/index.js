@@ -1,16 +1,16 @@
 import React, { Component, Fragment } from "react";
 import FullHeaderFullFooterLayout from "src/components/FullHeaderFullFooterLayout";
-import AboutPage from "src/pages/AboutPage/index.js"
+import BdiPage from "src/pages/BdiPage/index.js"
 
-class About extends Component {
+class Bdi extends Component {
   render() {
     return (
           <FullHeaderFullFooterLayout>
-            <AboutPage></AboutPage>
+            <BdiPage></BdiPage>
           </FullHeaderFullFooterLayout>
        
     );
   }
 }
 
-export default About;
+export default Bdi;

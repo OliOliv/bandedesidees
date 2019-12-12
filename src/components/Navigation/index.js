@@ -26,7 +26,7 @@ const Navigation = props => {
         <div className="navWrapper">
           <Link  href="/">
             <figure className="logoContainer">
-            <img className="logo" src="/logo.jpg" ></img>
+            <img className="logo" src="/logo.jpg" alt="logo" ></img>
             </figure>
           </Link>
           <NavbarToggler onClick={toggle} />

@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 
-class AboutPage extends React.Component {
+class BdiPage extends React.Component {
   render() {
     return (
       <Fragment>
-          <div>About</div>
+          bdi page
       </Fragment>
     );
   }
 }
 
-export default AboutPage;
+export default BdiPage;

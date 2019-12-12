@@ -1,11 +1,44 @@
 @import "src/components/variables.scss";
 
 .footer {
-    align-items: center;
-    height: 6vh;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    background-color: $colorPurple;
-  }
+	align-items: center;
+	height: 6vh;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	font-family: roboto;
+	color: lightgray;
+	font-size: $fontsmall;
+	letter-spacing: $xsmall;
+
+	background-color: $colorPurple;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.network {
+		margin-left: $small;
+		align-items: center;
+		display: flex;
+	}
+
+	img {
+		height: $small;
+		margin: 0 0 0 1rem;
+	}
+
+	.administration {
+		margin-left: auto;
+		padding-right: $small;
+	}
+
+	.administration p {
+		cursor: pointer;
+	}
+
+	.administration p:hover {
+		color: #36cdc0;
+	}
+}
