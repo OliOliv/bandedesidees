@@ -12,16 +12,16 @@ class Thumbnail extends React.Component {
     return (
       <Fragment>
         <div className="thumbnail">
-          <div className="thumbnailContent"><img src={this.props.lastEvent.image}/>
+          <div className="thumbnailContent"><img src={this.props.event.image}/>
         <div className="eventDetails">
             <h2 className="event">
               bande des idées
-              <span className="eventName">#{this.props.lastEvent.nom}</span>
+              <span className="eventName">#{this.props.event.nom}</span>
             </h2>
             <div className="convenient">
-              <p >{Moment(this.props.lastEvent.date_soiree).format(" dddd LL")}</p>
+              <p >{Moment(this.props.event.date_soiree).format(" dddd LL")}</p>
               <p className="eventPlace">
-                {this.props.lastEvent.heure} - {this.props.lastEvent.lieu}
+                {this.props.event.heure} - {this.props.event.lieu}
               </p>
             </div>
             </div>

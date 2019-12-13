@@ -1,3 +1,50 @@
-.eventContainer {
-    
+@import "src/components/variables.scss";
+
+.bdiContent {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	.description {
+		font-family: roboto;
+		margin-top: $xxsmall;
+		width: $centered;
+		height: auto;
+		margin-bottom: $large;
+
+		p {
+			justify-content: left;
+			font-family: $basic;
+			line-height: 2;
+		}
+
+		.speakerContainer {
+			display: flex;
+
+			.speakersList {
+				display: flex;
+
+				p {
+					margin-left: $xxsmall;
+				}
+			}
+		}
+
+		.buyLinks {
+			display: flex;
+			align-items: center;
+
+			p {
+				margin: 0;
+				font-family: $secondary;
+				font-size: $fontmedium;
+			}
+
+			img {
+				height: $medium;
+				margin: 0 0 0 $small;
+			}
+		}
+	}
 }

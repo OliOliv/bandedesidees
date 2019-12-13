@@ -1,6 +1,5 @@
 'use strict'
 
-var config = require('../../config/main');
 var db = require('./events.db');
 
 module.exports = {
@@ -24,9 +23,9 @@ function getLastEvent(callback) {
         });
 }
 
-function getOneEvent(param, callback) {    
+function getOneEvent(eventName, callback) {    
     db.getOneEvent(
-      param,
+      eventName,
       function(res) {
         return callback({
           success: true,

@@ -29,7 +29,7 @@ class HomePage extends React.Component {
 
     return (
       <Fragment>
-        <Thumbnail lastEvent={this.state.lastEvent}></Thumbnail>
+        <Thumbnail event={this.state.lastEvent}></Thumbnail>
         <Link  href={{ pathname: '/bdi', query: { name: this.state.lastEvent.nom } }}>
         <button className="homepageButton">Plus d'informations</button>
         </Link>

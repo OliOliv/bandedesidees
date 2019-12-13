@@ -2,7 +2,7 @@
 
 .footer {
 	align-items: center;
-	height: 6vh;
+	height: $medium;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
@@ -11,7 +11,6 @@
 	color: lightgray;
 	font-size: $fontsmall;
 	letter-spacing: $xsmall;
-
 	background-color: $colorPurple;
 
 	p {

@@ -19,6 +19,7 @@ module.exports = function (app) {
     var apiRoutes = express.Router();
     var userRoutes = require("./users/users.controller")
     var eventsRoutes = require("./events/events.controller")
+    var speakersRoutes = require("./speakers/speakers.controller")
 
     //Protected authenticated route with JWT
     apiRoutes.get('/dashboard', requireAuth, function (request, response) {
@@ -29,5 +30,6 @@ module.exports = function (app) {
     app.use('/api', apiRoutes);
     app.use('/api/users', userRoutes);
     app.use('/api/events', eventsRoutes);
+    app.use('/api/speakers', speakersRoutes);
 
 };

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
 //font colors
 $colorBlue: #36cdc0;
 $colorBlack: black;
@@ -5,13 +6,20 @@ $colorWhite: white;
 $colorPurple: #3f1c4d;
 
 //spaces
+$large: 5rem;
 $medium: 3rem;
 $small: 2rem;
+$xxsmall: 0.5rem;
 $xsmall: 0.2rem;
 
 //font family and size
 $basic: roboto;
+$secondary: Staatliches;
 $fontsmall: 1rem;
+$fontmedium: 1.5rem;
 
 //border radius
 $bradius: 3px;
+
+//witdh wrapper
+$centered: 68rem;
