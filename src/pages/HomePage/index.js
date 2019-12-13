@@ -7,30 +7,30 @@ import path2 from "src/pathToback.js"
 class HomePage extends React.Component {
 
   state={
-    lastEvent : []
+    lastEvent : [],
 }
      getLastEvent = async function() {
          const res = await fetch(path2 + "events/getlastevent");
          if (res.status === 201) {
          const data = await res.json()
-         const lastEvent = data.events[0]; 
+         const lastEvent = data.lastEvent[0]; 
          this.setState({lastEvent})
          }
-
          if (res.status === 401){
              //redirection
          }
        }
 
- componentDidMount() {
+ componentDidMount() {   
      this.getLastEvent()
  }
 
-  render() {    
+  render() {
+
     return (
       <Fragment>
         <Thumbnail lastEvent={this.state.lastEvent}></Thumbnail>
-        <Link  href={`/bdi?=${12}`}>
+        <Link  href={{ pathname: '/bdi', query: { name: this.state.lastEvent.nom } }}>
         <button className="homepageButton">Plus d'informations</button>
         </Link>
       </Fragment>

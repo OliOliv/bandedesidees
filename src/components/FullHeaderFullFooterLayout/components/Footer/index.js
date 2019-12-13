@@ -39,9 +39,7 @@ class Footer extends React.Component {
         <p>Administration</p>
       </Link> */}
       <Link
-        to={{
-          pathname: `/mentions`
-        }}
+        href="./"
       >
         <p>Mentions légales</p>
       </Link>

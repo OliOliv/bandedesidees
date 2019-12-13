@@ -4,6 +4,8 @@ const eventsService = require("./events.service");
 
 // routes
 router.get("/getlastevent", getLastEvent);
+router.get("/getoneevent/:eventName", getOneEvent);
+
 
 
 module.exports = router;
@@ -11,5 +13,17 @@ module.exports = router;
 function getLastEvent(req, res) {    
     eventsService
         .getLastEvent(result => {
-        result.success ? res.status(201).json(result) : res.status(401).json(result);
+        result.success ? 
+        res.status(201).json(result)
+        : res.status(401).json(result);
 })}
+
+
+function getOneEvent(req, res) {
+    eventsService.getOneEvent(req.params.eventName, result => {
+      result.success
+        ? res.status(201).json(result)
+        : res.status(401).json(result);
+    });
+  }
+  

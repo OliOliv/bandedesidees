@@ -3,10 +3,13 @@ import FullHeaderFullFooterLayout from "src/components/FullHeaderFullFooterLayou
 import BdiPage from "src/pages/BdiPage/index.js"
 
 class Bdi extends Component {
-  render() {
+  static getInitialProps({ query: { name } }) {
+    return { eventName: name }
+  }
+  render() {    
     return (
           <FullHeaderFullFooterLayout>
-            <BdiPage></BdiPage>
+            <BdiPage eventName={this.props.eventName}></BdiPage>
           </FullHeaderFullFooterLayout>
        
     );
