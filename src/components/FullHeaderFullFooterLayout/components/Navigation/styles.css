@@ -1,0 +1,51 @@
+.navigation {
+	margin-top: 4rem;
+	display: flex;
+	justify-content: center;
+	text-transform: uppercase;
+}
+
+.logoContainer {
+	margin-right: 2rem;
+	cursor: pointer;
+}
+
+.logoContainer .logo {
+	width: 25rem;
+	padding: 0;
+	margin: 0;
+	transform: rotate(-7deg);
+}
+
+.navWrapper {
+	justify-content: center;
+	display: flex;
+}
+
+.navContent {
+	background-color: #36cdc0;
+}
+
+.navContent button {
+	font-family: roboto;
+
+	text-transform: uppercase;
+	color: white;
+}
+
+.navContent:hover {
+	background-color: transparent;
+	color: black;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: black;
+	font-size: 1.1rem;
+	padding-right: 2rem;
+	font-family: roboto;
+	letter-spacing: 0.2rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: #36cdc0;
+}

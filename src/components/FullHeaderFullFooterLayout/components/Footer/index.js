@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import "./styles.scss";
 
 class Footer extends React.Component {
   render() {
@@ -43,7 +42,53 @@ class Footer extends React.Component {
       >
         <p>Mentions légales</p>
       </Link>
-    </section></footer>
+    </section>
+    
+    <style jsx>
+      {`.footer {
+	align-items: center;
+	height: 3rem;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	display: flex;
+	font-family: roboto;
+	color: lightgray;
+	font-size: 1rem;
+	letter-spacing: 0.2rem;
+	background-color: #3f1c4d;
+}
+
+footer p {
+	margin-bottom: 0;
+}
+
+footer img {
+	height: 2rem;
+	margin: 0 0 0 1rem;
+}
+
+.network {
+	margin-left: 2rem;
+	align-items: center;
+	display: flex;
+}
+
+.administration {
+	margin-left: auto;
+	padding-right: 2rem;
+}
+
+.administration p {
+	cursor: pointer;
+}
+
+.administration p:hover {
+	color: #36cdc0;
+}
+`}
+    </style>
+    </footer>
     );
   }
 }

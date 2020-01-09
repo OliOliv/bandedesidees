@@ -1,4 +1,7 @@
 import React, { Fragment, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.css"
+
 import {
   Collapse,
   Navbar,
@@ -12,7 +15,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import "./styles.scss";
+
 import Link from 'next/link'
 
 const Navigation = props => {

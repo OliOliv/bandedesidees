@@ -1,6 +1,4 @@
-const withSass = require("@zeit/next-sass");
 const withCSS = require("@zeit/next-css");
-const withImages = require("next-images");
 const path = require('path');
 
 // module.exports = withImages({
@@ -10,7 +8,7 @@ const path = require('path');
 // });
 
 module.exports = withCSS(
-  withSass({
+ {
     webpack(config, options) {
       
       config.module.rules.push({
@@ -27,6 +25,6 @@ module.exports = withCSS(
 
       return config;
     }
-  })
+  }
 );
 
