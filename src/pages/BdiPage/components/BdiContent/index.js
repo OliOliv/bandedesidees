@@ -16,6 +16,17 @@ class BdiContent extends React.Component {
       );
     }
 
+    let getEditions;
+    if (this.props.speakers.length) {
+      getspeakers = (
+        <div className="speakersList" >
+          {this.props.speakers.map(speaker => (
+                <p key={speaker.idIntervenant}>{speaker.prenom}</p>
+          ))}
+        </div>
+      );
+    }
+
     return (
       <Fragment>
         <div className="bdiContent">

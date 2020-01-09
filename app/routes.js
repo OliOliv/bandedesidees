@@ -20,6 +20,8 @@ module.exports = function (app) {
     var userRoutes = require("./users/users.controller")
     var eventsRoutes = require("./events/events.controller")
     var speakersRoutes = require("./speakers/speakers.controller")
+    var editionsRoutes = require("./editions/editions.controller")
+    var booksRoutes = require("./books/books.controller")
 
     //Protected authenticated route with JWT
     apiRoutes.get('/dashboard', requireAuth, function (request, response) {
@@ -31,5 +33,7 @@ module.exports = function (app) {
     app.use('/api/users', userRoutes);
     app.use('/api/events', eventsRoutes);
     app.use('/api/speakers', speakersRoutes);
+    app.use('/api/editions', editionsRoutes);
+    app.use('/api/books', booksRoutes);
 
 };
