@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import "./styles.scss"
-import Thumbnail from "src/pages/HomePage/components/Thumbnail/index.js"
+import Thumbnail from "src/components/Thumbnail"
+import style from "src/components/style"
 
 class BdiContent extends React.Component {
 
@@ -21,7 +21,7 @@ class BdiContent extends React.Component {
         <div className="bdiContent">
           <div className="eventContainer">
           <Thumbnail event={this.props.event}></Thumbnail>
-          <div className="description">
+            <div className="description">
             <p>
             {this.props.event.description}
             </p>
@@ -66,6 +66,65 @@ class BdiContent extends React.Component {
           </div>
           </div>
           </div>
+
+      <style jsx global>{`
+
+      .bdiContent {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+      }
+
+      .description {
+        font-family: ${style.basic};
+        margin-top: ${style.small};
+        width: ${style.centered};
+        height: auto;
+        margin-bottom: 5rem;
+      }
+
+      .description p {
+        justify-content: left;
+        font-family: ${style.basic};
+        line-height: ${style.height};
+      }
+
+      .speakerContainer {
+        margin-top: ${style.xsmall};
+        display: flex,
+      }
+
+      .speakersList {
+        display: flex;
+      }
+
+      .speakersList p {
+        margin-left: ${style.small};
+        color: ${style.colorBlue};
+        cursor: pointer      }
+
+      .speakersList p:hover {
+        color: ${style.colorPurple}
+      }
+      .buyLinks {
+        display: flex;
+        align-items: center;
+      }
+
+      .buyLinks p {
+        margin: 0;
+        font-family: ${style.secondary};
+        font-size: ${style.xsmall};
+      }
+
+      .buyLinks img {
+        height: 3rem;
+        margin: 0 0 0 ${style.xsmall};
+      }
+      `}</style>
+
       </Fragment>
     );
   }
