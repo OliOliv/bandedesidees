@@ -5,10 +5,11 @@ import style from "src/components/style"
 class BdiContent extends React.Component {
 
   render() {
+
     let getspeakers;
     if (this.props.speakers.length) {
       getspeakers = (
-        <div className="speakersList" >
+        <div className="contentList" >
           {this.props.speakers.map(speaker => (
                 <p key={speaker.idIntervenant}>{speaker.prenom}</p>
           ))}
@@ -16,16 +17,27 @@ class BdiContent extends React.Component {
       );
     }
 
+
+    let getBooks;
     let getEditions;
-    if (this.props.speakers.length) {
-      getspeakers = (
-        <div className="speakersList" >
-          {this.props.speakers.map(speaker => (
-                <p key={speaker.idIntervenant}>{speaker.prenom}</p>
+    if (this.props.booksOfEvent.length) {
+      getBooks = (
+        <div className="contentList" >
+          {this.props.booksOfEvent.map(book => (
+                <p key={book.idLivre}>{book.titre}</p>
+          ))}
+        </div>
+      );
+      getEditions = (
+        <div className="contentList" >
+          {this.props.booksOfEvent.map(edition => (
+                <p key={edition.idLivre}>{edition.nom}</p>
           ))}
         </div>
       );
     }
+
+
 
     return (
       <Fragment>
@@ -42,11 +54,11 @@ class BdiContent extends React.Component {
             </div>
            
             <div className='speakerContainer'>
-              <p>Les éditions</p>
+              <p>Les éditions</p> {getEditions}
               
             </div>
             <div className='speakerContainer'>
-              <p>Les livres</p>
+              <p>Les livres</p> {getBooks}
             </div>
             
             <div className="buyLinks">
@@ -107,19 +119,21 @@ class BdiContent extends React.Component {
         display: flex,
       }
 
-      .speakersList {
+      .contentList {
         display: flex;
       }
 
-      .speakersList p {
-        margin-left: ${style.small};
+      .contentList p {
+        margin-left: ${style.xsmall};
         color: ${style.colorBlue};
         cursor: pointer      }
 
-      .speakersList p:hover {
+      .contentList p:hover {
         color: ${style.colorPurple}
       }
+
       .buyLinks {
+        margin-top: ${style.xxsmall};
         display: flex;
         align-items: center;
       }

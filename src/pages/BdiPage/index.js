@@ -7,7 +7,8 @@ class BdiPage extends Component {
 
   state = {
     oneEvent: [],
-    speakers: []
+    speakers: [],
+    booksOfEvent: []
   }
        getOneEvent = async function() {
            const res = await fetch(path2 + `events/getoneevent/${this.props.eventName}`)
@@ -32,17 +33,30 @@ class BdiPage extends Component {
           if (res.status !== 201){
           }
         }
+
+        getBooksOfEvent  = async function() {
+          const res = await fetch(path2 + `books/getBooksOfEvent/${this.props.eventName}`)
+          if (res.status === 201) {
+          const data = await res.json()
+          const booksOfEvent = data.books; 
+          this.setState({booksOfEvent})
+          }
+ 
+          if (res.status !== 201){
+          }
+        }
   
          componentDidMount () {
            this.getOneEvent()
            this.getSpeakersOfEvent()
+           this.getBooksOfEvent()
          }
 
   render() {    
-    
+const {oneEvent, speakers, booksOfEvent} = this.state
     return (
       <Fragment>
-         <BdiContent event={this.state.oneEvent} speakers={this.state.speakers}></BdiContent>
+         <BdiContent event={oneEvent} speakers={speakers} booksOfEvent={booksOfEvent}></BdiContent>
          </Fragment>
        
     );
