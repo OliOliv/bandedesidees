@@ -9,8 +9,7 @@ module.exports = router;
 
 function getBooksOfEvent(req, res) {
     booksService.getBooksOfEvent(req.params.eventName, result => {
-      console.log("hey");
-      
+ 
       result.success
         ? res.status(201).json(result)
         : res.status(401).json(result);
