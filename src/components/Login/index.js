@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Formik } from 'formik';
 import style from 'src/components/style';
 import Button from 'src/components/Button';
-const Login = () => (
+const Login = (props) => (
 	<div>
 		<Formik
 			initialValues={{ email: '', password: '' }}
@@ -20,7 +20,7 @@ const Login = () => (
 				return errors;
 			}}
 			onSubmit={(values, { setSubmitting }) => {
-				console.log(values);
+				props.submitForm(values);
 			}}
 		>
 			{({
@@ -53,6 +53,7 @@ const Login = () => (
 							value={values.password}
 						/>
 						{errors.password && touched.password && errors.password}
+						{props.error && <p>Cet identifiant n'existe pas.</p>}
 						<Button type="submit" disabled={isSubmitting} text="Valider">
 							Valider
 						</Button>

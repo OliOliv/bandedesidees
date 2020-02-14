@@ -11,7 +11,6 @@ module.exports = function(app) {
 
 	// Initialize passport for use
 	app.use(passport.initialize());
-
 	// Bring in defined Passport Strategy
 	require('../config/passport')(passport);
 

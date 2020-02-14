@@ -9,14 +9,9 @@ usersdb.createUser = function(user, successCallback, failureCallback) {
 		user.password,
 		function(res) {
 			passwordHash = res;
-			console.log(connection);
 
 			connection.query(
-				"INSERT INTO `passport-auth`.`users` (`user_email`, `password`) VALUES ('" +
-					user.email +
-					"', '" +
-					passwordHash +
-					"');",
+				"INSERT INTO `users` (`user_email`, `password`) VALUES ('" + user.email + "', '" + passwordHash + "');",
 				function(err, rows, fields, res) {
 					if (err) {
 						failureCallback(err);
@@ -33,7 +28,7 @@ usersdb.createUser = function(user, successCallback, failureCallback) {
 };
 
 usersdb.findUser = function(user, successCallback, failureCallback) {
-	var sqlQuery = "SELECT * FROM `passport-auth`.users WHERE `user_email` = '" + user.email + "';";
+	var sqlQuery = "SELECT * FROM `users` WHERE `user_email` = '" + user.email + "';";
 	connection.query(sqlQuery, function(err, rows, fields, res) {
 		if (err) {
 			failureCallback(err);
