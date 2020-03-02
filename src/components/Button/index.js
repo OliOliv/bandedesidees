@@ -3,16 +3,17 @@ import Link from 'next/link';
 
 class Button extends React.Component {
 	renderButton = () => {
-		if (this.props.link) {
+		const { link, type, text } = this.props;
+		if (link) {
 			return (
-				<Link href={this.props.link}>
-					<button className="button">{this.props.text}</button>
+				<Link href={link}>
+					<button className="button">{text}</button>
 				</Link>
 			);
 		} else {
 			return (
-				<button button className="button">
-					{this.props.text}
+				<button type={type ? type : 'button'} className="button">
+					{text}
 				</button>
 			);
 		}

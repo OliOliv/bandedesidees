@@ -4,7 +4,7 @@ var connection = require('../../helpers/connection');
 
 //example for test on localhost = http://localhost:5000/api/events/getLastEvent
 eventsdb.getLastEvent = function(successCallback, failureCallback) {
-	var sqlQuery = 'SELECT * FROM soirees ORDER BY idSoiree DESC LIMIT 1';
+	var sqlQuery = 'SELECT * FROM soirees ORDER BY nom DESC LIMIT 1';
 	connection.query(sqlQuery, function(err, rows, fields, res) {
 		if (err) {
 			failureCallback(err);
@@ -19,7 +19,7 @@ eventsdb.getLastEvent = function(successCallback, failureCallback) {
 };
 
 eventsdb.getOneEvent = function(eventName, successCallback, failureCallback) {
-	const sqlQuery = `SELECT * FROM soirees WHERE idSoiree = ${eventName}`;
+	const sqlQuery = `SELECT * FROM soirees WHERE nom = ${eventName}`;
 
 	connection.query(sqlQuery, (err, rows, fields, res) => {
 		if (err) {
