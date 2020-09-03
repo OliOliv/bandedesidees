@@ -2,25 +2,26 @@ import React, { Fragment } from 'react';
 import { Formik } from 'formik';
 import style from 'src/components/style';
 import Button from 'src/components/Button';
-const Login = (props) => (
+import * as Yup from 'yup';
+
+const EventSchema = Yup.object().shape({
+	default: Yup.string().min(2, 'Le mot de passe doit comporter au moins 2 caractères').required('Champs requis')
+});
+
+const EventForm = (props) => (
 	<div>
 		<Formik
-			initialValues={{ email: '', password: '' }}
-			validate={(values) => {
-				const errors = {};
-				if (!values.email) {
-					errors.email = 'Mail requis';
-				} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
-					errors.email = 'Mail invalide';
-				}
-
-				if (!values.password) {
-					errors.password = 'Mot de passe requis';
-				}
-				return errors;
+			initialValues={{
+				Date: '',
+				Nom: '',
+				Description: '',
+				Image: '',
+				Lieu: '',
+				Heure: ''
 			}}
+			validationSchema={EventSchema}
 			onSubmit={(values, { setSubmitting }) => {
-				props.submitForm(values);
+				props.submitEventForm(values);
 			}}
 		>
 			{({ values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
@@ -55,4 +56,4 @@ const Login = (props) => (
 	</div>
 );
 
-export default Login;
+export default EventForm;

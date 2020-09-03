@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./styles.css"
+import "./styles.css";
 
 import {
   Collapse,
@@ -13,12 +13,12 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
 } from "reactstrap";
 
-import Link from 'next/link'
+import Link from "next/link";
 
-const Navigation = props => {
+const Navigation = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -27,21 +27,19 @@ const Navigation = props => {
     <Fragment>
       <Navbar className="navigation" light expand="md">
         <div className="navWrapper">
-          <Link  href="/">
+          <Link href="/">
             <figure className="logoContainer">
-            <img className="logo" src="/logo.jpg" alt="logo" ></img>
+              <img className="logo" src="/logo.jpg" alt="logo"></img>
             </figure>
           </Link>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="/components/">Accueil</NavLink>
+                <NavLink href="/">Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">
-                  Les BDI
-                </NavLink>
+                <NavLink href="/">Les BDI</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">

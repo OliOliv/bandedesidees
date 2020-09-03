@@ -1,17 +1,19 @@
 import React, { Component, Fragment } from "react";
-import AdminPage from "src/pages/AdminPage/index.js";
-
 import FullHeaderFullFooterLayout from "src/components/FullHeaderFullFooterLayout";
-class Admin extends Component {
+import BackOffice from "../../src/pages/BackOffice";
+class Bdi extends Component {
+  static getInitialProps({ query: { name } }) {
+    return { eventName: name };
+  }
   render() {
     return (
-      <Fragment>
+      <>
         <FullHeaderFullFooterLayout>
-          <AdminPage />
+          <BackOffice />
         </FullHeaderFullFooterLayout>
-      </Fragment>
+      </>
     );
   }
 }
 
-export default Admin;
+export default Bdi;
