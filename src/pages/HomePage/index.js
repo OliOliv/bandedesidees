@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
-import Link from "next/link";
+import Router, { useRouter } from "next/router";
+
+import Button from "src/components/Button";
 import Thumbnail from "src/components/Thumbnail";
 import path2 from "src/pathToback.js";
-import Button from "src/components/Button";
 import style from "src/components/style";
 
 class HomePage extends React.Component {
@@ -17,7 +18,7 @@ class HomePage extends React.Component {
       this.setState({ lastEvent });
     }
     if (res.status === 401) {
-      //redirection
+      Router.push("/error");
     }
   };
 

@@ -1,20 +1,20 @@
-import React, { Fragment, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 
 import {
   Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
   Nav,
   NavItem,
   NavLink,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
   UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
 } from "reactstrap";
+import React, { Fragment, useState } from "react";
 
 import Link from "next/link";
 

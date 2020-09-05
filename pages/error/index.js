@@ -1,19 +1,16 @@
 import React, { Component, Fragment } from "react";
 
-import BdiPage from "src/pages/BdiPage/index.js";
+import ErrorPage from "src/components/ErrorPage";
 import FullHeaderFullFooterLayout from "src/components/FullHeaderFullFooterLayout";
 
-class Bdi extends Component {
-  static getInitialProps({ query: { name } }) {
-    return { eventName: name };
-  }
+class Error extends Component {
   render() {
     return (
       <FullHeaderFullFooterLayout>
-        <BdiPage eventName={this.props.eventName}></BdiPage>
+        <ErrorPage></ErrorPage>
       </FullHeaderFullFooterLayout>
     );
   }
 }
 
-export default Bdi;
+export default Error;

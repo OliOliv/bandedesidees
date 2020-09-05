@@ -1,13 +1,14 @@
 import React, { Component, Fragment } from "react";
-import path2 from "src/pathToback.js";
+
+import EventForm from "../BackOffice/components/Form/components/EventForm";
 import Login from "src/components/Login/index.js";
 import Router from "next/router";
-import EventForm from "./components/Form/EventForm";
+import { param } from "express-validator";
+import path2 from "src/pathToback.js";
 
 class AdminPage extends Component {
   state = {
     error: false,
-    isAuthenticated: false,
   };
 
   submitForm = async (values) => {
@@ -20,24 +21,21 @@ class AdminPage extends Component {
     });
 
     if (res.status === 201) {
-      const data = await res.json();
       this.setState({ error: false, isAuthenticated: true });
-
-      Router.push(`/backoffice`);
+      const data = await res.json();
+      const params = `?token=${data.token}&isauthenticated=true`;
+      Router.push(`/backoffice${params}`);
     }
     if (res.status === 401) {
-      //redirection
       this.setState({ error: true });
     }
   };
 
   render() {
-    const { isAuthenticated, error } = this.state;
+    const { error } = this.state;
     return (
       <Fragment>
-        {!isAuthenticated && (
-          <Login submitForm={this.submitForm} error={this.state.error} />
-        )}
+        <Login submitForm={this.submitForm} error={error} />
       </Fragment>
     );
   }

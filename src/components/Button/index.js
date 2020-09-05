@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+
 import Link from "next/link";
 
 class Button extends React.Component {
@@ -39,7 +40,7 @@ class Button extends React.Component {
             padding: 15px;
             border: solid 2px black;
             margin: 3rem auto 0 auto;
-            font-family: roboto;
+            font-family: "roboto";
             font-weight: bold;
             text-transform: uppercase;
             color: black;

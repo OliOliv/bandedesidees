@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
-import style from "src/components/style";
-import Button from "src/components/Button";
-import { Formik, Form, Field } from "formik";
-
 import * as Yup from "yup";
+
+import { Field, Form, Formik } from "formik";
+import React, { Fragment } from "react";
+
+import Button from "src/components/Button";
+import style from "src/components/style";
 
 const SignupSchema = Yup.object().shape({
   password: Yup.string()
