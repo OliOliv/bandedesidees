@@ -18,7 +18,7 @@ class HomePage extends React.Component {
       this.setState({ lastEvent });
     }
     if (res.status === 401) {
-      Router.push("/error");
+      Router.push("/404");
     }
   };
 

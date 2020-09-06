@@ -23,6 +23,7 @@ class BdiPage extends Component {
       this.setState({ oneEvent });
     }
     if (res.status !== 201) {
+      Router.push("/404");
     }
   };
 
@@ -80,7 +81,7 @@ class BdiPage extends Component {
 
   componentDidMount() {
     if (!this.props.eventName) {
-      Router.push("/error");
+      Router.push("/404");
     }
     this.getOneEvent();
     this.getSpeakersOfEvent();

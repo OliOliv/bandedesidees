@@ -26,6 +26,10 @@ const style = {
 
   //witdh wrapper
   centered: "68rem",
+
+  //input
+  full: "100%",
+  half: "10rem",
 };
 
 export default style;

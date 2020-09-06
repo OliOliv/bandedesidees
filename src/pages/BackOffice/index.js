@@ -8,10 +8,12 @@ import edit from "./components/assets/edit.png";
 import list from "./components/assets/list.png";
 import style from "src/components/style";
 
+const config = require("../../../config/main");
+
 var jwt = require("jsonwebtoken");
 
 const BackOffice = () => {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useState(false);
   const [displayHistoryList, setDisplayHistoryList] = useState(false);
   const [displayForm, setDisplayForm] = useState(true);
 
@@ -19,14 +21,15 @@ const BackOffice = () => {
     query: { token, isauthenticated },
   } = useRouter();
 
-  const decodedToken = jwt.decode(token);
-  const adminToken = token
-    ? decodedToken.user_email === "labandedesidees@gmail.com" &&
-      decodedToken.user_type === 1
-    : null;
+  const checkToken = (decodedToken) => {
+    const adminToken =
+      decodedToken.user_email === config.main_mail &&
+      decodedToken.user_type === 1;
 
-  const validToken = token ? Date.now() <= decodedToken.exp * 1000 : null;
-  const isAuthorized = adminToken && isauthenticated && validToken;
+    const validToken = Date.now() <= decodedToken.exp * 1000;
+
+    setIsAuthorized(adminToken && isauthenticated && validToken);
+  };
 
   const renderHistory = () => {
     setDisplayForm(false);
@@ -39,56 +42,72 @@ const BackOffice = () => {
   };
 
   useEffect(() => {
-    if (!token || !isAuthorized) {
+    if (!token) {
       Router.push("/");
     }
-    setIsLogged(isAuthorized);
+    if (token) {
+      jwt.verify(token, config.secret, function (err, decoded) {
+        if (err) {
+          Router.push("/");
+        } else {
+          checkToken(decoded);
+        }
+      });
+    }
   });
 
-  if (!isLogged) {
+  if (!isAuthorized) {
     return null;
   }
+
   return (
     <>
       <Head>
         <meta content="noindex, nofollow" />
       </Head>
       <div className="backOfficeContainer">
-        <div onClick={renderForm} className="backOfficeSection">
-          <img src={edit}></img>
-          <p>Formulaire</p>
+        <div className="backOfficeMenu">
+          <div onClick={renderForm} className="backOfficeSection">
+            <img src={edit}></img>
+            <p>Formulaire</p>
+          </div>
+          <div onClick={renderHistory} className="backOfficeSection">
+            <img src={list}></img>
+            <p>Historique</p>
+          </div>
         </div>
-        <div onClick={renderHistory} className="backOfficeSection">
-          <img src={list}></img>
-          <p>Historique</p>
-        </div>
+
+        {displayHistoryList && (
+          <HistoryList isAuthorized={isAuthorized}></HistoryList>
+        )}
+        {displayForm && <Form isAuthorized={isAuthorized}></Form>}
+
+        <style jsx>{`
+          .backOfficeContainer {
+            margin-top: ${style.small};
+            font-family: Roboto;
+            width: 100%;
+            display: flex;
+          }
+
+          .backOfficeMenu {
+            margin-left: ${style.large};
+          }
+
+          .backOfficeSection {
+            text-align: center;
+            margin: ${style.large};
+          }
+
+          .backOfficeSection img {
+            width: 3rem;
+          }
+
+          .backOfficeSection p {
+            margin-top: ${style.small};
+          }
+        `}</style>
       </div>
-
-      {displayHistoryList && <HistoryList isLogged={isLogged}></HistoryList>}
-      {displayForm && <Form isLogged={isLogged}></Form>}
-
-      <style jsx>{`
-        .backOfficeContainer {
-          margin-top: ${style.small};
-          font-family: Roboto;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-        }
-
-        .backOfficeSection {
-          text-align: center;
-          margin: 0 2rem 0 2rem;
-        }
-
-        .backOfficeSection img {
-          width: 3rem;
-        }
-
-        .backOfficeSection p {
-          margin-top: ${style.small};
-        }
-      `}</style>
     </>
   );
 };

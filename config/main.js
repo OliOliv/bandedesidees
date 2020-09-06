@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 module.exports = {
-	secret: 'Passphrase for encryption',
-	database_host: 'localhost',
-	database_user: 'root',
-	database_password: '',
-	database_name: 'olioliv_bdi'
+  secret: "32BEDF09EB33D3544BF15AEC088B067518ED0B9E01617232F0759425545A41A4",
+  database_host: "localhost",
+  database_user: "root",
+  database_password: "",
+  database_name: "olioliv_bdi",
+  main_mail: "labandedesidees@gmail.com",
 };
