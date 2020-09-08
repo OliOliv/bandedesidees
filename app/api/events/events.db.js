@@ -34,4 +34,29 @@ eventsdb.getOneEvent = function (eventName, successCallback, failureCallback) {
   });
 };
 
+eventsdb.postOneEvent = function (event, successCallback, failureCallback) {
+  const sqlQuery =
+    "INSERT INTO soirees SET idSoiree = ?, date_soiree = ?, nom = ?, description = ?, image = ?, lieu = ?, heure = ? ";
+
+  connection.query(
+    sqlQuery,
+    [
+      null,
+      event.date,
+      event.nom,
+      event.description,
+      event.image,
+      event.lieu,
+      event.heure,
+    ],
+    function (err, rows, fields, res) {
+      if (err) {
+        failureCallback(err);
+        return;
+      }
+      successCallback();
+    }
+  );
+};
+
 module.exports = eventsdb;

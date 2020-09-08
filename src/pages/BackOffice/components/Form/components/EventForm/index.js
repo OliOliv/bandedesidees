@@ -3,11 +3,11 @@ import * as Yup from "yup";
 import Button from "src/components/Button";
 import Input from "src/components/Input";
 import React from "react";
-import path2 from "src/pathToback.js";
 import style from "src/components/style";
 import { useFormik } from "formik";
 
-const EventForm = (onSubmit) => {
+const EventForm = (props) => {
+  const { submitForm } = props;
   const EventSchema = Yup.object().shape({
     default: Yup.string()
       .min(2, "Le mot de passe doit comporter au moins 2 caractères")
@@ -16,6 +16,7 @@ const EventForm = (onSubmit) => {
 
   const formik = useFormik({
     initialValues: {
+      id: "",
       date: "",
       nom: "",
       description: "",
@@ -24,7 +25,7 @@ const EventForm = (onSubmit) => {
       heure: "",
     },
     EventSchema,
-    onSubmit,
+    onSubmit: submitForm,
   });
 
   const {
@@ -94,7 +95,9 @@ const EventForm = (onSubmit) => {
               value={values.heure}
             ></Input>
           </div>
-          <Button type="submit" disabled={isSubmitting} text="Suivant"></Button>
+          <Button type="submit" disabled={isSubmitting} text="Suivant">
+            Suivant
+          </Button>
         </form>
       </div>
 

@@ -9,13 +9,10 @@ usersdb.createUser = function (user, successCallback, failureCallback) {
     user.password,
     function (res) {
       passwordHash = res;
-
+      if (error) throw error;
       connection.query(
-        "INSERT INTO `users` (`user_email`, `password`) VALUES ('" +
-          user.email +
-          "', '" +
-          passwordHash +
-          "');",
+        "INSERT INTO users SET user_email = ?, password = ?",
+        [user.email, user.password],
         function (err, rows, fields, res) {
           if (err) {
             failureCallback(err);
@@ -33,7 +30,7 @@ usersdb.createUser = function (user, successCallback, failureCallback) {
 
 usersdb.findUser = function (user, successCallback, failureCallback) {
   var sqlQuery =
-    "SELECT * FROM `users` WHERE `user_email` = '" + user.email + "';";
+    "SELECT * FROM users WHERE user_email = " + connection.escape(user.email);
   connection.query(sqlQuery, function (err, rows, fields, res) {
     if (err) {
       failureCallback(err);
