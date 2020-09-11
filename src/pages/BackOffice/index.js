@@ -54,11 +54,7 @@ const BackOffice = () => {
         }
       });
     }
-  });
-
-  if (!isAuthorized) {
-    return null;
-  }
+  }, []);
 
   return (
     <>

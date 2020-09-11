@@ -6,6 +6,7 @@ module.exports = {
   getLastEvent,
   getOneEvent,
   postOneEvent,
+  getEvents,
 };
 
 function getLastEvent(callback) {
@@ -21,6 +22,24 @@ function getLastEvent(callback) {
       return callback({
         success: false,
         message: "No last event.",
+      });
+    }
+  );
+}
+
+function getEvents(callback) {
+  db.getEvents(
+    function (res) {
+      return callback({
+        success: true,
+        message: "Successfully get all events.",
+        allEvents: res,
+      });
+    },
+    function (err) {
+      return callback({
+        success: false,
+        message: "No events.",
       });
     }
   );

@@ -6,11 +6,20 @@ const eventsService = require("./events.service");
 router.get("/getlastevent", getLastEvent);
 router.get("/getoneevent/:eventName", getOneEvent);
 router.post("/postoneevent", postOneEvent);
+router.get("/getevents", getEvents);
 
 module.exports = router;
 
 function getLastEvent(req, res) {
   eventsService.getLastEvent((result) => {
+    result.success
+      ? res.status(201).json(result)
+      : res.status(401).json(result);
+  });
+}
+
+function getEvents(req, res) {
+  eventsService.getEvents((result) => {
     result.success
       ? res.status(201).json(result)
       : res.status(401).json(result);

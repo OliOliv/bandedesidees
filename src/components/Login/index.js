@@ -71,7 +71,7 @@ const Login = (props) => (
               justify-content: center;
               width: 100;
               text-align: center;
-              margin-top: ${style.large};
+              margin-top: ${style.medium};
             }
 
             .formContainer h1 {
