@@ -43,61 +43,61 @@ const EventForm = (props) => {
       <div className="eventFormContainer">
         <h3>Soirées</h3>
         <form onSubmit={handleSubmit} className="form">
-          <div className="groupInput">
+          <div className="inputContainer">
+            <div className="groupInput">
+              <Input
+                label={"Date"}
+                type="date"
+                name="date"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.date}
+              ></Input>
+              <Input
+                label={"Nom"}
+                type="text"
+                name="nom"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.nom}
+              ></Input>
+            </div>
             <Input
-              label={"Date"}
-              type="date"
-              name="date"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.date}
-            ></Input>
-            <Input
-              label={"Nom"}
+              label={"Description"}
               type="text"
-              name="nom"
+              name="description"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.nom}
+              value={values.description}
             ></Input>
+            <Input
+              label={"Image"}
+              type="text"
+              name="image"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.image}
+            ></Input>
+            <div className="groupInput">
+              <Input
+                label={"Lieu"}
+                type="text"
+                name="lieu"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.lieu}
+              ></Input>
+              <Input
+                label={"Heure"}
+                type="text"
+                name="heure"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.heure}
+              ></Input>
+            </div>
           </div>
-          <Input
-            label={"Description"}
-            type="text"
-            name="description"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.description}
-          ></Input>
-          <Input
-            label={"Image"}
-            type="text"
-            name="image"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.image}
-          ></Input>
-          <div className="groupInput">
-            <Input
-              label={"Lieu"}
-              type="text"
-              name="lieu"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.lieu}
-            ></Input>
-            <Input
-              label={"Heure"}
-              type="text"
-              name="heure"
-              onChange={handleChange}
-              onBlur={handleBlur}
-              value={values.heure}
-            ></Input>
-          </div>
-          <Button type="submit" disabled={isSubmitting} text="Suivant">
-            Suivant
-          </Button>
+          <Button type="submit" disabled={isSubmitting} text="Valider"></Button>
         </form>
       </div>
 
@@ -116,6 +116,9 @@ const EventForm = (props) => {
         .eventFormContainer form p {
           margin-left: ${style.small};
           align-self: flex-end;
+        }
+        .inputContainer {
+          margin-bottom: ${style.small};
         }
       `}</style>
     </>

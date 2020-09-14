@@ -58,7 +58,7 @@ function authenticate({ email, password }, callback) {
         if (isMatch && !err) {
           // Create token if the password matched and no error was thrown
           var token = jwt.sign(user, config.secret, {
-            expiresIn: 10080, // in seconds
+            expiresIn: 3600, // in seconds
           });
           return callback({ success: true, token: token });
         } else {

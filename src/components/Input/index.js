@@ -3,7 +3,7 @@ import React from "react";
 import style from "src/components/style";
 
 const Input = (props) => {
-  const { label, name, onBlur, onChange, value, type } = props;
+  const { label, name, onBlur, onChange, value, type, func } = props;
 
   return (
     <div className="inputContainer">

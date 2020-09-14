@@ -75,4 +75,37 @@ eventsdb.postOneEvent = function (event, successCallback, failureCallback) {
   );
 };
 
+eventsdb.updateEvent = (data, successCallback, failureCallback) => {
+  const sql =
+    "UPDATE soirees SET nom = ?, description = ?, image = ?, lieu = ?, heure = ? WHERE idSoiree = ?";
+  const payload = [
+    data.nom,
+    data.description,
+    data.image,
+    data.lieu,
+    data.heure,
+    data.idSoiree,
+  ];
+
+  connection.query(sql, payload, function (err, rows, fields, res) {
+    if (err) {
+      failureCallback(err);
+      return;
+    }
+    successCallback();
+  });
+};
+
+eventsdb.deleteEvent = function (idSoiree, successCallback, failureCallback) {
+  console.log("db", idSoiree);
+  const sqlQuery = "DELETE FROM soirees WHERE idSoiree = ?";
+
+  connection.query(sqlQuery, [idSoiree], (err, rows, fields, res) => {
+    if (err) {
+      failureCallback(err);
+      return;
+    }
+    successCallback();
+  });
+};
 module.exports = eventsdb;

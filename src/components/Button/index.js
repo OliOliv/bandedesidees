@@ -39,7 +39,7 @@ class Button extends React.Component {
             width: auto;
             padding: 15px;
             border: solid 2px black;
-            margin: 3rem auto 0 auto;
+            margin: 0 auto 0 auto;
             font-family: "roboto";
             font-weight: bold;
             text-transform: uppercase;
@@ -67,7 +67,7 @@ class Button extends React.Component {
             width: auto;
             padding: 15px;
             border: solid 2px grey;
-            margin: 3rem auto 0 auto;
+            margin: 0 auto 0 auto;
             font-family: roboto;
             font-weight: bold;
             text-transform: uppercase;

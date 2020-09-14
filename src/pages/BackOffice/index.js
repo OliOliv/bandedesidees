@@ -88,6 +88,9 @@ const BackOffice = () => {
 
           .backOfficeMenu {
             margin-left: ${style.large};
+            position: sticky;
+            top: ${style.large};
+            height: 100%;
           }
 
           .backOfficeSection {

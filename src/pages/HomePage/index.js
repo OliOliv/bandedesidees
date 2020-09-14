@@ -40,6 +40,7 @@ class HomePage extends React.Component {
 
         <style jsx>{`
           .homeButtonContainer {
+            margin-top: ${style.medium};
             margin-bottom: ${style.large};
           }
         `}</style>

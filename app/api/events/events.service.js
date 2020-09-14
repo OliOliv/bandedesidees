@@ -7,6 +7,8 @@ module.exports = {
   getOneEvent,
   postOneEvent,
   getEvents,
+  updateEvent,
+  deleteEvent,
 };
 
 function getLastEvent(callback) {
@@ -78,6 +80,45 @@ function postOneEvent(event, callback) {
       return callback({
         success: false,
         message: "Impossible de créer l'événemnt",
+      });
+    }
+  );
+}
+
+function updateEvent(event, callback) {
+  db.updateEvent(
+    event,
+    function (res) {
+      return callback({
+        success: true,
+        message: "Evenement modifié !",
+        event: res,
+      });
+    },
+    function (err) {
+      return callback({
+        success: false,
+        message: "Impossible de modifier l'événemnt",
+      });
+    }
+  );
+}
+
+function deleteEvent(event, callback) {
+  console.log("service", event);
+  db.deleteEvent(
+    event,
+    function (res) {
+      return callback({
+        success: true,
+        message: "Soirée supprimée !",
+        event: res,
+      });
+    },
+    function (err) {
+      return callback({
+        success: false,
+        message: "Impossible de supprimer cette soirée.",
       });
     }
   );
