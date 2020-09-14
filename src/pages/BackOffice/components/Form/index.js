@@ -25,8 +25,7 @@ const Form = () => {
       <EventForm submitForm={submitForm}></EventForm>
       <style jsx>{`
         .formContainer {
-          width: 100%;
-          margin: 3rem 0 5rem 20rem;
+          margin: 3rem 0 5rem 0;
           display: flex;
           font-family: roboto;
         }

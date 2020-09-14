@@ -1,5 +1,6 @@
 import * as Yup from "yup";
-
+import Moment from "moment";
+import "moment/locale/fr";
 import Button from "src/components/Button";
 import Input from "src/components/Input";
 import React from "react";
@@ -7,22 +8,22 @@ import style from "src/components/style";
 import { useFormik } from "formik";
 
 const EventForm = (props) => {
-  const { submitForm } = props;
+  const { submitForm, event } = props;
   const EventSchema = Yup.object().shape({
     default: Yup.string()
       .min(2, "Le mot de passe doit comporter au moins 2 caractères")
       .required("Champs requis"),
   });
 
+  const eventDate = Moment(event?.date_soiree).format("YYYY-MM-DD");
   const formik = useFormik({
     initialValues: {
-      id: "",
-      date: "",
-      nom: "",
-      description: "",
-      image: "",
-      lieu: "",
-      heure: "",
+      date: eventDate || "",
+      nom: event?.nom || "",
+      description: event?.description || "",
+      image: event?.image || "",
+      lieu: event?.lieu || "",
+      heure: event?.heure || "",
     },
     EventSchema,
     onSubmit: submitForm,
@@ -41,7 +42,7 @@ const EventForm = (props) => {
   return (
     <>
       <div className="eventFormContainer">
-        <h3>Soirées</h3>
+        <h3> {event ? `Soirée ${event.nom}` : "Ajouter une soirée"}</h3>
         <form onSubmit={handleSubmit} className="form">
           <div className="inputContainer">
             <div className="groupInput">

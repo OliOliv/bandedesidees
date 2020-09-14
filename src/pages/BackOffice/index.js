@@ -72,17 +72,24 @@ const BackOffice = () => {
             <p>Historique</p>
           </div>
         </div>
-
-        {displayHistoryList && (
-          <HistoryList isAuthorized={isAuthorized}></HistoryList>
-        )}
-        {displayForm && <Form isAuthorized={isAuthorized}></Form>}
-
+        <div className="backOfficeContent">
+          {displayHistoryList && (
+            <HistoryList isAuthorized={isAuthorized}></HistoryList>
+          )}
+          {displayForm && <Form isAuthorized={isAuthorized}></Form>}
+        </div>
         <style jsx>{`
           .backOfficeContainer {
+            padding: 0 3rem 0 3rem;
             margin-top: ${style.small};
             font-family: Roboto;
             width: 100%;
+            display: flex;
+          }
+
+          .backOfficeContent {
+            width: 100%;
+            justify-content: center;
             display: flex;
           }
 
@@ -91,6 +98,8 @@ const BackOffice = () => {
             position: sticky;
             top: ${style.large};
             height: 100%;
+            width: auto;
+            padding: 2rem;
           }
 
           .backOfficeSection {

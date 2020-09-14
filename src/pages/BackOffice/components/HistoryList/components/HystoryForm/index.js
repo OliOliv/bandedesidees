@@ -9,13 +9,24 @@ import deleteIcon from "../assets/delete.png";
 import edit from "../assets/edit.png";
 import path2 from "src/pathToback.js";
 import style from "src/components/style";
+import DeleteModal from "./components/DeleteModal";
+import UpdateModal from "./components/UpdateModal";
 
 const HistoryForm = (formType, props) => {
   const [events, setEvents] = useState([]);
-  const [modal, setModal] = useState(false);
-  const { className } = props;
+  const [deleteModal, setDeleteModal] = useState(false);
+  const [updateModal, setUpdateModal] = useState(false);
 
-  const toggle = () => setModal(!modal);
+  const [chosenEvent, setChosenEvent] = useState(null);
+
+  const toggleDeleteModal = () => {
+    setDeleteModal(!deleteModal);
+  };
+
+  const toggleUpdateModal = () => {
+    setUpdateModal(!updateModal);
+  };
+
   const getEvents = async function () {
     const res = await fetch(path2 + `events/getevents`);
     if (res.status === 201) {
@@ -29,7 +40,6 @@ const HistoryForm = (formType, props) => {
   };
 
   const updateEvent = async (values) => {
-    console.log(values);
     // const res = await fetch(path2 + "events/update", {
     //   method: "PUT",
     //   headers: {
@@ -37,15 +47,23 @@ const HistoryForm = (formType, props) => {
     //   },
     //   body: JSON.stringify(values),
     // });
-
     // if (res.status === 201) {
     // }
     // if (res.status === 401) {
     // }
   };
 
+  const handleUpdate = (event) => {
+    setChosenEvent(event);
+    toggleUpdateModal(true);
+  };
+
+  const handleDelete = (event) => {
+    setChosenEvent(event);
+    toggleDeleteModal(true);
+  };
+
   const deleteEvent = async (event) => {
-    console.log(event);
     const res = await fetch(path2 + `events/deleteevent/${event}`, {
       method: "DELETE",
       headers: {
@@ -55,6 +73,7 @@ const HistoryForm = (formType, props) => {
 
     if (res.status === 201) {
       getEvents();
+      toggleDeleteModal(false);
     }
     if (res.status === 401) {
     }
@@ -64,14 +83,26 @@ const HistoryForm = (formType, props) => {
     getEvents();
   }, []);
 
+  console.log(chosenEvent);
   return (
     <>
       <Head>
         <meta content="noindex, nofollow" />
       </Head>
       <div className="listContainer">
+        <DeleteModal
+          chosenEvent={chosenEvent}
+          toggleDeleteModal={toggleDeleteModal}
+          deleteModal={deleteModal}
+          deleteEvent={deleteEvent}
+        />
+        <UpdateModal
+          chosenEvent={chosenEvent}
+          toggleUpdateModal={toggleUpdateModal}
+          updateModal={updateModal}
+          updateEvent={updateEvent}
+        />
         <h3>Soirées</h3>
-
         {events.map((event) => (
           <div className="raw" key={event.nom}>
             <table>
@@ -101,33 +132,13 @@ const HistoryForm = (formType, props) => {
               </tbody>
             </table>
             <div className="iconsContainer">
-              <img onClick={toggle} src={edit}></img>
-              <img
-                onClick={() => deleteEvent(event.idSoiree)}
-                src={deleteIcon}
-              ></img>
+              <img onClick={() => handleUpdate(event)} src={edit}></img>
+              <img onClick={() => handleDelete(event)} src={deleteIcon}></img>
             </div>
           </div>
         ))}
 
-        <div>
-          <Modal isOpen={modal} toggle={toggle} className={className}>
-            <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-            <ModalBody>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </ModalBody>
-            <ModalFooter>
-              <Button onClick={toggle}>Do Something</Button>{" "}
-              <Button onClick={toggle}>Cancel</Button>
-            </ModalFooter>
-          </Modal>
-        </div>
+        <div></div>
       </div>
 
       <style jsx>{`
@@ -135,10 +146,13 @@ const HistoryForm = (formType, props) => {
           display: flex;
         }
 
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-        border: 1px solid #ddd;
+        table {
+          border-collapse: collapse;
+          border-spacing: 0;
+          width: 100%;
+          border: 1px solid #ddd;
+        }
+
         .listContainer {
           margin-bottom: 4rem;
         }
