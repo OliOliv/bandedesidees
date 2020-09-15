@@ -6,7 +6,9 @@
     "start": "concurrently --kill-others-on-fail \"npm run dev\" \"npm run server\"",
     "dev": "next dev",
     "build": "next build",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@babel/plugin-proposal-decorators": "^7.10.5",
@@ -43,5 +45,13 @@
     "unfetch": "^4.1.0",
     "url-loader": "^3.0.0",
     "yup": "^0.28.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-jest": "^26.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "jest": "^26.4.2"
   }
 }

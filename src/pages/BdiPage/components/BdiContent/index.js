@@ -58,13 +58,14 @@ class BdiContent extends React.Component {
             <Thumbnail event={this.props.event} />
             <div className="description">
               <p>{this.props.event.description}</p>
-              {this.props.speakers.length && (
+
+              {this.props.speakers.length ? (
                 <div className="contentContainer">
                   <p>Avec</p> {getspeakers}
                 </div>
-              )}
+              ) : null}
 
-              {this.props.booksOfEvent.length && (
+              {this.props.booksOfEvent.length ? (
                 <>
                   <div className="contentContainer">
                     <p>Les éditions</p> {getEditions}
@@ -73,7 +74,7 @@ class BdiContent extends React.Component {
                     <p>Les livres</p> {getBooks}
                   </div>
                 </>
-              )}
+              ) : null}
 
               <div className="buyLinks">
                 <p>Retrouvez ces livres en librairie</p>
