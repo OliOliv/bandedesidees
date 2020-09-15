@@ -18,6 +18,7 @@ const EventForm = (props) => {
   const eventDate = Moment(event?.date_soiree).format("YYYY-MM-DD");
   const formik = useFormik({
     initialValues: {
+      idSoiree: event?.idSoiree,
       date: eventDate || "",
       nom: event?.nom || "",
       description: event?.description || "",
@@ -45,6 +46,17 @@ const EventForm = (props) => {
         <h3> {event ? `Soirée ${event.nom}` : "Ajouter une soirée"}</h3>
         <form onSubmit={handleSubmit} className="form">
           <div className="inputContainer">
+            {event?.idSoiree && (
+              <Input
+                label={"Id"}
+                type="text"
+                name="idSoiree"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.idSoiree}
+                disabled={true}
+              ></Input>
+            )}
             <div className="groupInput">
               <Input
                 label={"Date"}

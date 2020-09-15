@@ -3,7 +3,7 @@ import React from "react";
 import style from "src/components/style";
 
 const Input = (props) => {
-  const { label, name, onBlur, onChange, value, type, func } = props;
+  const { label, name, onBlur, onChange, value, type, func, disabled } = props;
 
   return (
     <div className="inputContainer">
@@ -14,6 +14,7 @@ const Input = (props) => {
         onChange={onChange}
         onBlur={onBlur}
         value={value}
+        disabled={disabled}
       ></input>
       <style jsx>{`
         .inputContainer {

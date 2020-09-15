@@ -21,7 +21,7 @@ const UpdateModal = (props) => {
       >
         <ModalHeader toggle={toggleUpdateModal}>Modifier</ModalHeader>
         <ModalBody>
-          <EventForm event={chosenEvent}></EventForm>
+          <EventForm event={chosenEvent} submitForm={updateEvent}></EventForm>
         </ModalBody>
       </Modal>
     </>

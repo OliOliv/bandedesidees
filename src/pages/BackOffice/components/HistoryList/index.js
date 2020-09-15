@@ -16,7 +16,7 @@ const HistoryList = () => {
         <meta content="noindex, nofollow" />
       </Head>
       <div>
-        <nav>
+        {/* <nav>
           <ul className="navigation">
             <li onClick={() => displayForm("event")}>Soirées </li>
             <li onClick={() => displayForm("speaker")}>Intervenant.e.s</li>
@@ -27,7 +27,7 @@ const HistoryList = () => {
             <li onClick={() => displayForm("editor")}>Editeurs</li>
             <li onClick={() => displayForm("illustrations")}>Illustrations</li>
           </ul>
-        </nav>
+        </nav> */}
 
         <div>
           <HistoryForm formType={formType}></HistoryForm>

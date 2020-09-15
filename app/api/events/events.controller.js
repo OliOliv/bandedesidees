@@ -53,7 +53,6 @@ function updateEvent(req, res) {
 }
 
 function deleteEvent(req, res) {
-  console.log("alors", res);
   eventsService.deleteEvent(req.params.eventId, (result) => {
     result.success
       ? res.status(201).json(result)

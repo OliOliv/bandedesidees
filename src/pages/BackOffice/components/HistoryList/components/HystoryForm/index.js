@@ -40,17 +40,20 @@ const HistoryForm = (formType, props) => {
   };
 
   const updateEvent = async (values) => {
-    // const res = await fetch(path2 + "events/update", {
-    //   method: "PUT",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(values),
-    // });
-    // if (res.status === 201) {
-    // }
-    // if (res.status === 401) {
-    // }
+    console.log("les valeurs qu'on envoie là", values);
+    const res = await fetch(path2 + "events/updateevent", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+    if (res.status === 201) {
+      getEvents();
+      toggleUpdateModal(false);
+    }
+    if (res.status === 401) {
+    }
   };
 
   const handleUpdate = (event) => {

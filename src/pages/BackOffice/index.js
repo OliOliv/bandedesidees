@@ -91,6 +91,7 @@ const BackOffice = () => {
             width: 100%;
             justify-content: center;
             display: flex;
+            position: absolute;
           }
 
           .backOfficeMenu {
@@ -100,6 +101,7 @@ const BackOffice = () => {
             height: 100%;
             width: auto;
             padding: 2rem;
+            z-index: 1;
           }
 
           .backOfficeSection {

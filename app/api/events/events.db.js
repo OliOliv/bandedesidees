@@ -97,7 +97,6 @@ eventsdb.updateEvent = (data, successCallback, failureCallback) => {
 };
 
 eventsdb.deleteEvent = function (idSoiree, successCallback, failureCallback) {
-  console.log("db", idSoiree);
   const sqlQuery = "DELETE FROM soirees WHERE idSoiree = ?";
 
   connection.query(sqlQuery, [idSoiree], (err, rows, fields, res) => {

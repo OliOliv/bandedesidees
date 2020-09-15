@@ -5,7 +5,7 @@ import path2 from "src/pathToback.js";
 const Form = () => {
   //A adapter aux events
 
-  const submitForm = async (values) => {
+  const submitForm = async (values, { resetForm }) => {
     const res = await fetch(path2 + "events/postoneevent", {
       method: "POST",
       headers: {
@@ -15,6 +15,7 @@ const Form = () => {
     });
 
     if (res.status === 201) {
+      resetForm({});
     }
     if (res.status === 401) {
     }

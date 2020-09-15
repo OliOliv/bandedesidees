@@ -105,7 +105,6 @@ function updateEvent(event, callback) {
 }
 
 function deleteEvent(event, callback) {
-  console.log("service", event);
   db.deleteEvent(
     event,
     function (res) {
