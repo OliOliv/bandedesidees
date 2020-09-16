@@ -80,7 +80,6 @@ const BackOffice = () => {
         </div>
         <style jsx>{`
           .backOfficeContainer {
-            padding: 0 3rem 0 3rem;
             margin-top: ${style.small};
             font-family: Roboto;
             width: 100%;

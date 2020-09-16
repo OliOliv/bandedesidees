@@ -32,7 +32,7 @@ const Login = (props) => (
         handleSubmit,
         isValid,
         dirty,
-        /* and other goodies */
+        isSubmitting,
       }) => (
         <div className="formContainer">
           <h1>Accès administrateur</h1>
@@ -93,7 +93,6 @@ const Login = (props) => (
             .form input {
               width: 40rem;
               margin-top: 3rem;
-              border: 2px solid ${style.colorBlue};
             }
 
             .inputContainer {

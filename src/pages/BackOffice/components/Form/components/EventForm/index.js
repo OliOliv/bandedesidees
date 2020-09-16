@@ -9,10 +9,22 @@ import { useFormik } from "formik";
 
 const EventForm = (props) => {
   const { submitForm, event } = props;
-  const EventSchema = Yup.object().shape({
-    default: Yup.string()
-      .min(2, "Le mot de passe doit comporter au moins 2 caractères")
-      .required("Champs requis"),
+
+  const validationSchema = Yup.object().shape({
+    date: Yup.string().required("Date requise"),
+    nom: Yup.number().required("Nom requis").positive().integer(),
+    description: Yup.string()
+      .min(1, "La description doit comporter au moins 1 caractère")
+      .required("Description requise"),
+    image: Yup.string()
+      .min(1, "Le lien de l'image doit comporter au moins 1 caractère")
+      .required("Lien requis"),
+    lieu: Yup.string()
+      .min(1, "Le lieu doit comporter au moins 1 caractère")
+      .required("Lieu requis"),
+    heure: Yup.string()
+      .min(3, "L'heure doit comporter au moins 3 caractères")
+      .required("Heure requise"),
   });
 
   const eventDate = Moment(event?.date_soiree).format("YYYY-MM-DD");
@@ -26,7 +38,7 @@ const EventForm = (props) => {
       lieu: event?.lieu || "",
       heure: event?.heure || "",
     },
-    EventSchema,
+    validationSchema,
     onSubmit: submitForm,
   });
 
@@ -37,7 +49,10 @@ const EventForm = (props) => {
     handleChange,
     handleBlur,
     handleSubmit,
+    isValid,
+    dirty,
     isSubmitting,
+    isValidating,
   } = formik;
 
   return (
@@ -55,6 +70,7 @@ const EventForm = (props) => {
                 onBlur={handleBlur}
                 value={values.idSoiree}
                 disabled={true}
+                required
               ></Input>
             )}
             <div className="groupInput">
@@ -65,14 +81,19 @@ const EventForm = (props) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.date}
+                error={errors.date}
+                touched={touched.date}
               ></Input>
               <Input
                 label={"Nom"}
-                type="text"
+                type="number"
                 name="nom"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.nom}
+                error={errors.nom}
+                touched={touched.nom}
+                required
               ></Input>
             </div>
             <Input
@@ -82,6 +103,9 @@ const EventForm = (props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.description}
+              error={errors.description}
+              touched={touched.description}
+              required
             ></Input>
             <Input
               label={"Image"}
@@ -90,6 +114,9 @@ const EventForm = (props) => {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.image}
+              error={errors.image}
+              touched={touched.image}
+              required
             ></Input>
             <div className="groupInput">
               <Input
@@ -99,6 +126,9 @@ const EventForm = (props) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.lieu}
+                error={errors.lieu}
+                touched={touched.lieu}
+                required
               ></Input>
               <Input
                 label={"Heure"}
@@ -107,10 +137,17 @@ const EventForm = (props) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.heure}
+                error={errors.heure}
+                touched={touched.heure}
+                required
               ></Input>
             </div>
           </div>
-          <Button type="submit" disabled={isSubmitting} text="Valider"></Button>
+          <Button
+            disabled={!isValid || isSubmitting || !dirty}
+            type={isValid ? "submit" : ""}
+            text="Valider"
+          ></Button>
         </form>
       </div>
 
@@ -124,6 +161,7 @@ const EventForm = (props) => {
         .groupInput {
           display: flex;
           justify-content: space-between;
+          align-items: baseline;
         }
 
         .eventFormContainer form p {

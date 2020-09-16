@@ -40,7 +40,6 @@ const HistoryForm = (formType, props) => {
   };
 
   const updateEvent = async (values) => {
-    console.log("les valeurs qu'on envoie là", values);
     const res = await fetch(path2 + "events/updateevent", {
       method: "PUT",
       headers: {
@@ -86,7 +85,6 @@ const HistoryForm = (formType, props) => {
     getEvents();
   }, []);
 
-  console.log(chosenEvent);
   return (
     <>
       <Head>
