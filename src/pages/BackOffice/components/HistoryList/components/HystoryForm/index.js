@@ -1,4 +1,5 @@
 import "moment/locale/fr";
+import { Table } from "reactstrap";
 
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import React, { useEffect, useState } from "react";
@@ -12,7 +13,7 @@ import style from "src/components/style";
 import DeleteModal from "./components/DeleteModal";
 import UpdateModal from "./components/UpdateModal";
 
-const HistoryForm = (formType, props) => {
+const HistoryForm = (props) => {
   const [events, setEvents] = useState([]);
   const [deleteModal, setDeleteModal] = useState(false);
   const [updateModal, setUpdateModal] = useState(false);
@@ -104,18 +105,27 @@ const HistoryForm = (formType, props) => {
           updateEvent={updateEvent}
         />
         <h3>Soirées</h3>
-        {events.map((event) => (
-          <div className="raw" key={event.nom}>
-            <table>
-              <tbody>
-                <tr>
+        <div className="tableContainer">
+          <Table responsive>
+            <thead>
+              <tr className="raw">
+                <th>Nom</th>
+                <th>Date</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Lieu</th>
+                <th>Heure</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {events.map((event) => (
+                <tr className="raw" key={event.nom}>
                   <td>
-                    <div className="defaultContainer">{event.nom}</div>
+                    <div>{event.nom}</div>
                   </td>
                   <td>
-                    <div className="defaultContainer">
-                      {Moment(event.date_soiree).format("L")}
-                    </div>
+                    <div>{Moment(event.date_soiree).format("L")}</div>
                   </td>
                   <td>
                     <div className="bigContainer">{event.description}</div>
@@ -124,59 +134,38 @@ const HistoryForm = (formType, props) => {
                     <div className="bigContainer">{event.image}</div>
                   </td>
                   <td>
-                    <div className="bigContainer">{event.lieu}</div>
+                    <div>{event.lieu}</div>
                   </td>
                   <td>
-                    <div className="bigContainer">{event.heure}</div>
+                    <div>{event.heure}</div>
+                  </td>
+
+                  <td>
+                    <div className="iconsContainer">
+                      <img onClick={() => handleUpdate(event)} src={edit}></img>
+                      <img
+                        onClick={() => handleDelete(event)}
+                        src={deleteIcon}
+                      ></img>
+                    </div>
                   </td>
                 </tr>
-              </tbody>
-            </table>
-            <div className="iconsContainer">
-              <img onClick={() => handleUpdate(event)} src={edit}></img>
-              <img onClick={() => handleDelete(event)} src={deleteIcon}></img>
-            </div>
-          </div>
-        ))}
-
-        <div></div>
+              ))}
+            </tbody>
+          </Table>
+        </div>
       </div>
 
       <style jsx>{`
-        .list {
-          display: flex;
-        }
-
-        table {
-          border-collapse: collapse;
-          border-spacing: 0;
-          width: 100%;
-          border: 1px solid #ddd;
-        }
-
-        .listContainer {
-          margin-bottom: 4rem;
-        }
-
-        .iconsContainer {
-          margin-left: 3rem;
-          display: flex;
+        th,
+        td {
+          text-align: left;
+          padding: 1rem;
         }
 
         .iconsContainer img {
-          margin-right: 1rem;
           width: 1rem;
-        }
-
-        .raw {
-          display: flex;
-          align-items: center;
-          width: 100%;
-        }
-
-        .raw tr {
-          display: flex;
-          width: 100%;
+          margin: 0 0.5rem;
         }
 
         .bigContainer {
@@ -184,16 +173,16 @@ const HistoryForm = (formType, props) => {
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          margin-left: 1rem;
         }
 
-        .defaultContainer {
-          min-width: 2rem;
-          max-width: 6rem;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          margin-left: 1rem;
+        .tableContainer {
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          text-align: center;
+          display: grid;
+          margin-bottom: 3rem;
         }
       `}</style>
     </>

@@ -29,7 +29,7 @@ const Navigation = (props) => {
         <div className="navWrapper">
           <Link href="/">
             <figure className="logoContainer">
-              <img className="logo" src="/logo.jpg" alt="logo"></img>
+              <img className="logo" src="/logo.png" alt="logo"></img>
             </figure>
           </Link>
           <NavbarToggler onClick={toggle} />
@@ -43,7 +43,7 @@ const Navigation = (props) => {
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">
-                  Qui sommmes-nous
+                  L'association
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>

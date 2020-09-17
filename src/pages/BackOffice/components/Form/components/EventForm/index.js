@@ -168,8 +168,15 @@ const EventForm = (props) => {
           margin-left: ${style.small};
           align-self: flex-end;
         }
+
         .inputContainer {
           margin-bottom: ${style.small};
+        }
+
+        @media screen and (max-width: 1170px) {
+          .groupInput {
+            display: block;
+          }
         }
       `}</style>
     </>

@@ -51,3 +51,40 @@
 .navbar-light .navbar-nav .nav-link:hover {
   color: #36cdc0;
 }
+
+
+@media screen and (max-width: 1168px) {
+  .logo {
+    display: none;
+  }
+  .navbar-collapse {
+    margin-top: 1rem;
+  }
+
+  .navWrapper {
+    display: block;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 1.5rem;
+  
+  }
+}
+  @media screen and (max-width: 769px) {
+    
+    .navigation {
+      justify-content: left;
+    }
+    .navbar-collapse {
+      margin-top: 1rem;
+    }
+  
+    .navWrapper {
+      display: block;
+    }
+  
+    .navbar-light .navbar-nav .nav-link {
+      font-size: 1.5rem;
+    
+    }
+}

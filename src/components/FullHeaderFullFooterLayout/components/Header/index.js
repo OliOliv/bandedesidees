@@ -33,6 +33,19 @@ class Header extends React.Component {
             margin-left: auto;
             padding-right: 3rem;
           }
+          @media screen and (max-width: 574px) {
+            .header p {
+              display: none;
+            }
+
+            .header h1 {
+              padding: 0;
+            }
+
+            .header {
+              justify-content: center;
+            }
+          }
         `}</style>
       </header>
     );

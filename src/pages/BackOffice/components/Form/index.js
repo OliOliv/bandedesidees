@@ -29,6 +29,8 @@ const Form = () => {
           margin: 3rem 0 5rem 0;
           display: flex;
           font-family: roboto;
+          width: 100%;
+          justify-content: center;
         }
       `}</style>
     </div>

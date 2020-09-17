@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import Link from "next/link";
 import Moment from "moment";
 import "moment/locale/fr";
+import style from "src/components/style";
 
 class Thumbnail extends React.Component {
   render() {
@@ -35,6 +36,7 @@ class Thumbnail extends React.Component {
 
           .thumbnailContent {
             width: 60rem;
+            margin-bottom: ${style.medium};
           }
 
           .thumbnailImage {
@@ -78,6 +80,34 @@ class Thumbnail extends React.Component {
 
           .eventPlace {
             color: #36cdc0;
+          }
+
+          @media screen and (max-width: 992px) {
+            .thumbnailContent {
+              width: 50rem;
+            }
+            .thumbnailImage {
+              width: 50rem;
+            }
+          }
+
+          @media screen and (max-width: 832px) {
+            .thumbnailContent {
+              width: 30rem;
+            }
+            .thumbnailImage {
+              width: 30rem;
+            }
+          }
+
+          @media screen and (max-width: 574px) {
+            .thumbnailContent {
+              display: none;
+            }
+
+            .thumbnailImage {
+              display: none;
+            }
           }
         `}</style>
       </Fragment>

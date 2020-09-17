@@ -80,32 +80,24 @@ const BackOffice = () => {
         </div>
         <style jsx>{`
           .backOfficeContainer {
-            margin-top: ${style.small};
             font-family: Roboto;
-            width: 100%;
-            display: flex;
           }
 
           .backOfficeContent {
             width: 100%;
             justify-content: center;
-            display: flex;
-            position: absolute;
+            text-align: center;
           }
 
           .backOfficeMenu {
-            margin-left: ${style.large};
-            position: sticky;
-            top: ${style.large};
-            height: 100%;
-            width: auto;
+            display: flex;
             padding: 2rem;
-            z-index: 1;
+            justify-content: center;
           }
 
           .backOfficeSection {
             text-align: center;
-            margin: ${style.large};
+            margin: 0 ${style.medium};
           }
 
           .backOfficeSection img {

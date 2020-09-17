@@ -73,7 +73,7 @@ const Login = (props) => (
           <style jsx>{`
             .formContainer {
               justify-content: center;
-              width: 100;
+              width: 100%;
               text-align: center;
               margin-top: ${style.medium};
             }
@@ -91,14 +91,15 @@ const Login = (props) => (
             }
 
             .form input {
-              width: 40rem;
+              width: 100%;
               margin-top: 3rem;
             }
 
             .inputContainer {
               display: flex;
               flex-direction: column;
-              margin-bottom: ${style.small};
+              margin-bottom: ${style.medium};
+              width: 20rem;
             }
 
             .error {
@@ -107,6 +108,12 @@ const Login = (props) => (
 
             .globalError {
               margin-top: ${style.medium};
+            }
+
+            @media screen and (max-width: 398px) {
+              .inputContainer {
+                width: 10rem;
+              }
             }
           `}</style>
         </div>

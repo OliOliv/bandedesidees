@@ -24,10 +24,10 @@ class FullHeaderFullFooterLayout extends React.Component {
 
         <Header></Header>
         <Navigation></Navigation>
-        <div className="centerChildren">
+        <>
           {this.props.children}
           <Footer></Footer>
-        </div>
+        </>
 
         <style jsx global>{`
           p {

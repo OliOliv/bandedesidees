@@ -61,7 +61,8 @@ class BdiContent extends React.Component {
 
               {this.props.speakers.length ? (
                 <div className="contentContainer">
-                  <p>Avec</p> {getspeakers}
+                  <p>Avec</p>
+                  <div>{getspeakers}</div>
                 </div>
               ) : null}
 
@@ -78,27 +79,29 @@ class BdiContent extends React.Component {
 
               <div className="buyLinks">
                 <p>Retrouvez ces livres en librairie</p>
-                <a
-                  href="https://www.parislibrairies.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    alt="logo Paris Librairie"
-                    src="https://static.epagine.fr/mediaweb3/5435/logo_parislibrairie.jpg"
-                  />
-                </a>
-                <a
-                  href="https://www.placedeslibraires.fr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    alt="logo place des libraires"
-                    src="https://static.epagine.fr/mediaweb3/7/logo_pdl.png"
+                <div className="externalLinks">
+                  <a
+                    href="https://www.parislibrairies.fr/"
+                    target="_blank"
                     rel="noopener noreferrer"
-                  />
-                </a>
+                  >
+                    <img
+                      alt="logo Paris Librairie"
+                      src="https://static.epagine.fr/mediaweb3/5435/logo_parislibrairie.jpg"
+                    />
+                  </a>
+                  <a
+                    href="https://www.placedeslibraires.fr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      alt="logo place des libraires"
+                      src="https://static.epagine.fr/mediaweb3/7/logo_pdl.png"
+                      rel="noopener noreferrer"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -162,9 +165,52 @@ class BdiContent extends React.Component {
             margin: 0 0 0 ${style.xsmall};
           }
 
+          @media screen and (max-width: 1170px) {
+            .description {
+              width: 100%;
+              justify-content: center;
+            }
+
+            .description p {
+              -webkit-box-pack: center;
+              padding: 0 3rem;
+              -webkit-justify-content: center;
+              -ms-flex-pack: center;
+              width: 100%;
+              justify-content: center;
+              text-align: center;
+            }
+
+            .buyLinks {
+              display: block;
+            }
+
+            .buyLinks img {
+              margin: 0 0.5rem;
+            }
+
+            .externalLinks {
+              width: 100%;
+              justify-content: center;
+              text-align: center;
+            }
+
+            .contentList {
+              display: block;
+            }
+
+            .contentList p {
+              margin: 0;
+            }
+
+            .contentContainer {
+              display: block;
+            }
+          }
+
           //illustrations and photography
-           {
-            /* 
+
+          /* 
 					.illustrationsContainer {
 						-ms-flex-pack: center;
 						justify-content: center;
@@ -212,7 +258,6 @@ class BdiContent extends React.Component {
 						font-family: roboto;
 						font-weight: bolder;
 					} */
-          }
         `}</style>
       </Fragment>
     );

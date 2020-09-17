@@ -32,19 +32,58 @@ class HomePage extends React.Component {
       query: { name: this.state.lastEvent.nom },
     };
     return (
-      <Fragment>
+      <div className="homeContainer">
         <Thumbnail event={this.state.lastEvent} />
         <div className="homeButtonContainer">
           <Button text="Plus d'information" link={link} />
         </div>
-
+        <div className="reponsiveSection">
+          <img src="/blackminilogo.png" alt="minilogo"></img>
+          <Button text="Prochaine BDI" link={link} />
+        </div>
         <style jsx>{`
           .homeButtonContainer {
-            margin-top: ${style.medium};
             margin-bottom: ${style.large};
           }
+
+          @media screen and (min-width: 574px) {
+            .reponsiveSection {
+              display: none;
+            }
+          }
+          @media screen and (max-width: 574px) {
+            .homeButtonContainer {
+              display: none;
+            }
+
+            .reponsiveSection {
+              display: block;
+              margin-bottom: 5rem;
+              text-align: center;
+              justify-content: center;
+              width: 100%;
+              padding: 0 2rem;
+            }
+
+            .reponsiveSection img {
+              margin-bottom: ${style.small};
+              width: 100%;
+            }
+
+            .reponsiveSection Button {
+              width: 100%;
+              margin-bottom: ${style.large};
+            }
+
+            .homeContainer {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              height: 100%;
+            }
+          }
         `}</style>
-      </Fragment>
+      </div>
     );
   }
 }
