@@ -166,6 +166,7 @@ const HistoryForm = (props) => {
         .iconsContainer img {
           width: 1rem;
           margin: 0 0.5rem;
+          cursor: pointer;
         }
 
         .bigContainer {
