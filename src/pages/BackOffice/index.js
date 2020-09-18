@@ -76,7 +76,9 @@ const BackOffice = () => {
           {displayHistoryList && (
             <HistoryList isAuthorized={isAuthorized}></HistoryList>
           )}
-          {displayForm && <Form isAuthorized={isAuthorized}></Form>}
+          {displayForm && (
+            <Form token={token} isAuthorized={isAuthorized}></Form>
+          )}
         </div>
         <style jsx>{`
           .backOfficeContainer {

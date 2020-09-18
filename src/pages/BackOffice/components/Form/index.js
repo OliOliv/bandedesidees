@@ -1,15 +1,19 @@
 import EventForm from "./components/EventForm";
 import React from "react";
 import path2 from "src/pathToback.js";
+import Router, { useRouter } from "next/router";
 
 const Form = () => {
-  //A adapter aux events
+  const {
+    query: { token },
+  } = useRouter();
 
   const submitForm = async (values, { resetForm }) => {
     const res = await fetch(path2 + "events/postoneevent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify(values),
     });

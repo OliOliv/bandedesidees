@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const eventsService = require("./events.service");
+const security = require("../../../middlewares/security");
 
 // routes
 router.get("/getlastevent", getLastEvent);
 router.get("/getoneevent/:eventName", getOneEvent);
-router.post("/postoneevent", postOneEvent);
+router.post("/postoneevent", security.checkJWT, postOneEvent);
 router.get("/getevents", getEvents);
-router.put("/updateevent", updateEvent);
-router.delete("/deleteevent/:eventId", deleteEvent);
+router.put("/updateevent", security.checkJWT, updateEvent);
+router.delete("/deleteevent/:eventId", security.checkJWT, deleteEvent);
 
 module.exports = router;
 
