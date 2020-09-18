@@ -50,7 +50,7 @@ A quick look at the top-level files and directories you'll see
 
 👤 **Olivia Zeboudj**
 
-* LinkedIn: [@Olivia Zeboudjia](https://linkedin.com/in/Olivia Zeboudjia)
+* LinkedIn: [Olivia Zeboudj](https://www.linkedin.com/in/olivia-z-371a52156/)
 
 ## Show your support
 
