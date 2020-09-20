@@ -1,7 +1,7 @@
 import "moment/locale/fr";
 import { Table } from "reactstrap";
+import Router, { useRouter } from "next/router";
 
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from "reactstrap";
 import React, { useEffect, useState } from "react";
 
 import Head from "next/head";
@@ -9,7 +9,6 @@ import Moment from "moment";
 import deleteIcon from "../assets/delete.png";
 import edit from "../assets/edit.png";
 import path2 from "src/pathToback.js";
-import style from "src/components/style";
 import DeleteModal from "./components/DeleteModal";
 import UpdateModal from "./components/UpdateModal";
 
@@ -19,6 +18,9 @@ const HistoryForm = (props) => {
   const [updateModal, setUpdateModal] = useState(false);
 
   const [chosenEvent, setChosenEvent] = useState(null);
+  const {
+    query: { token },
+  } = useRouter();
 
   const toggleDeleteModal = () => {
     setDeleteModal(!deleteModal);
@@ -45,6 +47,7 @@ const HistoryForm = (props) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
       body: JSON.stringify(values),
     });
@@ -71,6 +74,7 @@ const HistoryForm = (props) => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
       },
     });
 
