@@ -17,7 +17,7 @@ class HomePage extends React.Component {
       const lastEvent = data.lastEvent[0];
       this.setState({ lastEvent });
     }
-    if (res.status === 401) {
+    if (res.status !== 201) {
       Router.push("/404");
     }
   };

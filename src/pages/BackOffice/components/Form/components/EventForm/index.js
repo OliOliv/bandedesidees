@@ -1,8 +1,10 @@
-import * as Yup from "yup";
-import Moment from "moment";
 import "moment/locale/fr";
+
+import * as Yup from "yup";
+
 import Button from "src/components/Button";
 import Input from "src/components/Input";
+import Moment from "moment";
 import React from "react";
 import style from "src/components/style";
 import { useFormik } from "formik";
@@ -18,7 +20,7 @@ const EventForm = (props) => {
       .required("Description requise"),
     image: Yup.string()
       .min(1, "Le lien de l'image doit comporter au moins 1 caractère")
-      .required("Lien requis"),
+      .required("Image requise"),
     lieu: Yup.string()
       .min(1, "Le lieu doit comporter au moins 1 caractère")
       .required("Lieu requis"),

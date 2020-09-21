@@ -20,6 +20,10 @@ class FullHeaderFullFooterLayout extends React.Component {
             href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="keywords"
+            content="Bande des Idées, bande des idées, bandes des idees, bande, idées, association, lecture, culture, culturel, 9e art, bande déssinée, bandes déssinées, bd, comics, manga, indé, édition, éditeurs, animation, animations, animateurs, animateur, animatrices, événement, livres, soirées, bar, convivial, chaleureux, débat, discussion, coup de coeur, séléction, convivial, Lou Pascalou, libraires, libraires, libraire, discuter, public, échange, échanges, défendre, arguments, auteurs, autrices, coloriste, planches, diaporama, présentation, lundi, rendez-vous, bédéphile "
+          />
         </Head>
 
         <Header></Header>

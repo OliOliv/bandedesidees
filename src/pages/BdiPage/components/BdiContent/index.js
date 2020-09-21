@@ -117,7 +117,6 @@ class BdiContent extends React.Component {
 
           .description {
             font-family: ${style.basic};
-            margin-top: ${style.medium};
             width: ${style.centered};
             height: auto;
             margin-bottom: 5rem;

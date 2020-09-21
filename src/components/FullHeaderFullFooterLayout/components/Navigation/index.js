@@ -39,12 +39,10 @@ const Navigation = (props) => {
                 <NavLink href="/">Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">Les BDI</NavLink>
+                <NavLink href="/historiquebdi">Les BDI</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  L'association
-                </NavLink>
+                <NavLink href="/presentation">L'association</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>

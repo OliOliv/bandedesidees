@@ -3,13 +3,9 @@ var config = require("../config/main");
 const SECRET_KEY = config.secret;
 
 exports.checkJWT = async (req, res, next) => {
-  console.log(req.headers);
-
   let token = req.headers["x-access-token"] || req.headers["authorization"];
   if (!!token && token.startsWith("Bearer ")) {
-    console.log("on coupe baby");
     token = token.slice(7, token.length);
-    console.log(token);
   }
   if (token) {
     jwt.verify(token, SECRET_KEY, (err, decoded) => {

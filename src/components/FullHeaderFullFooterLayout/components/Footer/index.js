@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
 
 class Footer extends React.Component {
   render() {
@@ -30,7 +30,7 @@ class Footer extends React.Component {
           </a>
         </div>
         <section className="administration">
-          <Link href="./">
+          <Link href="/mentionslegales">
             <p>Mentions légales</p>
           </Link>
         </section>
