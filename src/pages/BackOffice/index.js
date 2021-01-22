@@ -25,12 +25,10 @@ const BackOffice = () => {
     const adminToken =
       decodedToken.user_email === config.main_mail &&
       decodedToken.user_type === 1;
-
     const validToken = Date.now() <= decodedToken.exp * 1000;
 
     setIsAuthorized(adminToken && isauthenticated && validToken);
   };
-
   const renderHistory = () => {
     setDisplayForm(false);
     setDisplayHistoryList(true);

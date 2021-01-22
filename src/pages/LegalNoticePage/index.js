@@ -1,5 +1,3 @@
-import "./style.css";
-
 import React, { Fragment } from "react";
 
 class Mentions extends React.Component {
@@ -321,6 +319,41 @@ class Mentions extends React.Component {
             </p>
           </article>
         </section>
+
+        <style jsx global>{`
+          .mentions {
+            width: 60%;
+            margin: 30px auto 60px auto;
+            padding-bottom: 30px;
+          }
+
+          .mentions h2 {
+            font-family: roboto;
+          }
+
+          .mentions h3 {
+            font-family: Staatliches;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 3vh;
+            margin-bottom: 1vh;
+            margin-top: 1vh;
+            color: #36cdc0;
+            letter-spacing: 5px;
+          }
+
+          .mentions p {
+            font-family: roboto;
+          }
+
+          .mentions a {
+            color: #36cdc0;
+          }
+
+          .mentions article {
+            margin-bottom: 3vh;
+          }
+        `}</style>
       </Fragment>
     );
   }

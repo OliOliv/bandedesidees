@@ -7,6 +7,7 @@ class Bdi extends Component {
   static getInitialProps({ query: { name } }) {
     return { eventName: name };
   }
+
   render() {
     return (
       <FullHeaderFullFooterLayout>

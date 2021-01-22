@@ -60,7 +60,7 @@ const Login = (props) => (
               ) : null}
               {props.error && (
                 <p className="error globalError">
-                  Cet identifiant n'existe pas.
+                  Cet identifiant n'existe pas ou le mot de passe est incorrect
                 </p>
               )}
             </div>

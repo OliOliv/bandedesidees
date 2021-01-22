@@ -4,6 +4,6 @@ module.exports = {
   database_host: "localhost",
   database_user: "root",
   database_password: "",
-  database_name: "olioliv_bdi",
+  database_name: "bandedesidees",
   main_mail: "labandedesidees@gmail.com",
 };
